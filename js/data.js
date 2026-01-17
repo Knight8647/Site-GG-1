@@ -27,12 +27,25 @@ const gifts = [
     link: "https://loja.electrolux.com.br/fogao-4-bocas-electrolux-prata-efficient-com-mesa-de-vidro-perfectcook-e-vaporbake--fe4gs-/p?idsku=310120614&msclkid=8715e428882110340e338d438b8d31dc&utm_source=bing&utm_medium=cpc&utm_campaign=%5BVitrio%5D%20PLA%20%7C%20USC%20%7C%20Top%20Produtos&utm_term=2333713430298929&utm_content=Top%20Produtos  "
   },
   {
-    id: 1,
+    id: 4,
     category: "Eletro",
     name: "Samsung Lava e Seca Digital Inverter Ecobubble™ WD10M Branca 10.1kg 220V",
     price: 3299,
     image:"assets/Maquina.jpg",
     pix: "",
     link: "https://a.co/d/1HJRsDg",
+  },
+  {
+    id: 5,
+    category: "Eletro",
+    name: "Smart TV QLED 4K Samsung 55'' Q60B",
+    price: 1597,
+    image: "assets/Tv.jpg",
+    pix: "",
+    link: "https://www.magazineluiza.com.br/smart-tv-43-philips-full-hd-dled-43pfg6918-78-60hz-google-tv-quad-core-google-assistente-3-hdm/p/240247300/et/elit/?partner_id=64853&utm_source=pdp_desk&utm_medium=share"
+  },
+  {
+    id: 6,
+    category: ""
   }
 ];
