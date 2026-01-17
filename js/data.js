@@ -13,7 +13,7 @@ const gifts = [
     category: "Eletro",
     name: "Micro-Ondas Electrolux Prata com Painel Integrado 31L (MI41S)",
     price: 749,
-    image: "assets/Microondas.jpg",
+  image: "assets/Microondas.jpg",
     pix: "PIX_CODIGO_AQUI",
     link: "https://site.fastshop.com.br/micro-ondas-electrolux-prata-com-painel-integrado-31l--mi41s--exmi41s_prd/p?idsku=12601&utm_source=bing&utm_medium=cpc&utm_campaign=%5Bli%5D_lb_%5Bst%5D_comercial_%5Bch%5D_1p_%5Bpl%5D_bing_%5Bty%5D_shop&utm_term=&utm_placement=o&msclkid=8b66da23f62a1d0c1c1db348f52b5466"
   },
@@ -25,5 +25,14 @@ const gifts = [
     image: "assets/Fogão.jpg",
     pix: "PIX_CODIGO_AQUI",
     link: "https://loja.electrolux.com.br/fogao-4-bocas-electrolux-prata-efficient-com-mesa-de-vidro-perfectcook-e-vaporbake--fe4gs-/p?idsku=310120614&msclkid=8715e428882110340e338d438b8d31dc&utm_source=bing&utm_medium=cpc&utm_campaign=%5BVitrio%5D%20PLA%20%7C%20USC%20%7C%20Top%20Produtos&utm_term=2333713430298929&utm_content=Top%20Produtos  "
+  },
+  {
+    id: 1,
+    category: "Eletro",
+    name: "Samsung Lava e Seca Digital Inverter Ecobubble™ WD10M Branca 10.1kg 220V",
+    price: 3299,
+    image:"assets/Maquina.jpg",
+    pix: "",
+    link: "https://a.co/d/1HJRsDg",
   }
 ];
