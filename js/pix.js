@@ -15,7 +15,7 @@ if (!gift) {
     <textarea id="pixCode" readonly>${gift.pixCode}</textarea>
 
     <button class="btn" onclick="copyPix()">Copiar código Pix</button>
-    <p class="thanks">💍 Obrigado por fazer parte da nossa história!</p>
+    <p class="thanks">Obrigado por fazer parte da nossa história!</p>
   `;
 }
 

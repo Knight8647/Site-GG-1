@@ -142,3 +142,8 @@ body {
   border: 1px solid #e91e63;
   color: #e91e63;
 }
+
+.icon {
+  width: 40px;
+  height: 40px;
+}

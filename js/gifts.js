@@ -17,7 +17,7 @@ function renderGifts(category) {
 
       <div class="actions">
         <a href="pix.html?id=${gift.id}" target="_blank" class="btn">
-          Doar em dinheiro
+          Adicionar ao Carrinho (Doação em Dinheiro)
         </a>
         <a href="${gift.link}" target="_blank" class="btn outline">
           Comprar no site
