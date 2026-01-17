@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #fffffffd;
+  color: hsl(0, 0%, 0%);
+}
+
+.header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.gift-card {
+  background: rgb(255, 255, 255);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 25px rgba(68, 68, 68, 0.219);
+  transition: transform 0.2s;
+}
+
+.gift-card:hover {
+  transform: translateY(-4px);
+}
+
+.gift-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.price {
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 0.7rem;
+  background: #e91e63;
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+}
+.gallery {
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.photos img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+.gift-section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.tabs {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.tab.active {
+  background: #e91e63;
+  color: white;
+}
+
+.gift-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.gift-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.gift-card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.btn {
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 12px;
+  background: #e91e63;
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1px solid #e91e63;
+  color: #e91e63;
+}
