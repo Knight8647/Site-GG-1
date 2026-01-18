@@ -111,6 +111,12 @@ function copiarPix() {
 }
 
 function abrirModal() {
+  const nome = obterNomeConvidado();
+
+  if (!nome.trim()) {
+    alert("Por favor, informe seu nome 😊");
+    return;
+  }
   document.getElementById("confirmModal").style.display = "flex";
 }
 
@@ -138,5 +144,17 @@ function finalizarPagamento() {
   localStorage.removeItem("carrinho");
 
   window.location.href = "index.html";
+}
+function obterNomeConvidado() {
+  return localStorage.getItem("nomeConvidado") || "";
+}
+const inputNome = document.getElementById("nomeConvidado");
+
+if (inputNome) {
+  inputNome.value = obterNomeConvidado();
+
+  inputNome.addEventListener("input", () => {
+    localStorage.setItem("nomeConvidado", inputNome.value);
+  });
 }
 

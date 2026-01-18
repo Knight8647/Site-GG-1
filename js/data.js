@@ -576,5 +576,15 @@ const gifts = [
     image: "assets/Climatizador.jpg",
     pix: "",
     link: "https://a.co/d/iwJXqLs",
+  },
+  //Cozinha
+  {
+    id: 64,
+    category: "Utensilhos",
+    name: "Conjunto De Panelas Sartin Champ 7 Peças Cerâmica Mimo Stylee",
+    price: 399.90,  
+    image: "assets/Panelas.jpg",
+    pix: "",
+    
   }
 ];

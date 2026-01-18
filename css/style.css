@@ -458,3 +458,32 @@ button:disabled {
 .btn-copy {
   margin-bottom: 20px;
 }
+/* ===== Login Box ===== */
+.login-box {
+  margin: 20px 0;
+  text-align: left;
+}
+
+.login-box label {
+  display: block;
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px 14px;
+
+  border-radius: 12px;
+  border: none;
+
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+
+  font-size: 14px;
+}
+
+.login-box input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
