@@ -24,17 +24,20 @@
   </header>
   
     <!-- Abas -->
-  <div class="tabs">
-    <button class="tab active" data-category="Eletro">Eletrodomésticos</button>
-    <button class="tab" data-category="Utensilhos">Cozinha</button>
-    <button class="tab" data-category="Banheiro">Itens para Banheiro</button>
-    <button class="tab" data-category="Vale">Vale Presente</button>
-    <button class="tab" data-category="Quarto">Quarto</button>
-    <button class="tab" data-category="SalaEstar">Sala de Estar</button>
-    <button class="tab" data-category="Noivos">Vida dos Noivos</button>
-    <button class="tab" data-category="Noivo">Alegria do Noivo TI</button>
-    <button class="tab" data-category="Noiva">Alegria da Noiva Designer</button>
+     
+<div class="tabs-wrapper">
+  <button id="prevTab" class="arrow">‹</button>
+
+  <div class="tabs-viewport">
+    <div class="tabs-track" id="tabsContainer">
+      <!-- JS injeta as tabs -->
+    </div>
   </div>
+
+  <button id="nextTab" class="arrow">›</button>
+</div>
+
+
   <section class="gift-section">
 
   <!-- Lista de presentes -->
