@@ -228,3 +228,38 @@ body {
   color: #fff;
   user-select: none;
 }
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.img-carrinho {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.info-carrinho {
+  flex: 1;
+}
+
+.info-carrinho .nome {
+  font-weight: 600;
+}
+
+.info-carrinho .preco {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.remover {
+  background: none;
+  border: none;
+  color: #f87171;
+  font-size: 18px;
+  cursor: pointer;
+}

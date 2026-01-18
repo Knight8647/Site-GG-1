@@ -1,27 +1,66 @@
-const params = new URLSearchParams(window.location.search);
-const giftId = parseInt(params.get("id"));
-
-const gift = gifts.find(g => g.id === giftId);
-
-const container = document.getElementById("pix-content");
-
-if (!gift) {
-  container.innerHTML = "<p>Presente não encontrado.</p>";
-} else {
-  container.innerHTML = `
-    <h1>${gift.name}</h1>
-    <p class="price">R$ ${gift.price.toFixed(2)}</p>
-
-    <textarea id="pixCode" readonly>${gift.pixCode}</textarea>
-
-    <button class="btn" onclick="copyPix()">Copiar código Pix</button>
-    <p class="thanks">Obrigado por fazer parte da nossa história!</p>
-  `;
+// === CARRINHO ===
+function obterCarrinho() {
+  return JSON.parse(localStorage.getItem("carrinho")) || [];
 }
 
-function copyPix() {
-  const textarea = document.getElementById("pixCode");
-  textarea.select();
-  document.execCommand("copy");
-  alert("Código Pix copiado!");
+function salvarCarrinho(carrinho) {
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
+
+// ⬇⬇⬇ ISSO É O MAIS IMPORTANTE ⬇⬇⬇
+window.adicionarAoCarrinho = function (nome, preco, imagem) {
+  const carrinho = obterCarrinho();
+
+  carrinho.push({
+    nome,
+    preco,
+    imagem: "/" + imagem,
+  });
+
+  salvarCarrinho(carrinho);
+  console.log("Carrinho:", carrinho);
+  alert("Presente adicionado ao carrinho!");
+};
+
+// === RENDER CARRINHO ===
+function renderCarrinho() {
+  const lista = document.getElementById("listaCarrinho");
+  const totalEl = document.getElementById("totalCarrinho");
+  if (!lista || !totalEl) return;
+
+  const carrinho = obterCarrinho();
+  let total = 0;
+
+  lista.innerHTML = "";
+
+  carrinho.forEach((item, index) => {
+    total += item.preco;
+
+    const div = document.createElement("div");
+    div.className = "item-carrinho";
+
+   div.innerHTML = `
+      <img src="${item.imagem}" alt="${item.nome}" class="img-carrinho">
+
+      <div class="info-carrinho">
+        <p class="nome">${item.nome}</p>
+        <p class="preco">R$ ${item.preco.toFixed(2)}</p>
+      </div>
+
+      <button class="remover" onclick="removerItem(${index})">✕</button>
+    `;
+
+    lista.appendChild(div);
+  });
+
+  totalEl.textContent = total.toFixed(2);
+}
+
+window.removerItem = function (index) {
+  const carrinho = obterCarrinho();
+  carrinho.splice(index, 1);
+  salvarCarrinho(carrinho);
+  renderCarrinho();
+};
+
+renderCarrinho();

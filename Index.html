@@ -1,56 +1,64 @@
 <!DOCTYPE html>
-<section class="gallery">
-  <h2>Nossa história</h2>
-
-  <div class="photos">
-    <img src="assets/img/foto1.jpg" alt="Foto do casal">
-    <img src="assets/img/foto2.jpg" alt="Foto do casal">
-    <img src="assets/img/foto3.jpg" alt="Foto do casal">
-  </div>
-</section>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="assets/17042027.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/17042027.ico" type="image/x-icon">
   <title>Lista de Casamento</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-
+  <div id="login-container">
+    <h2>Faça seu login</h2>
+    <form id="login-form">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
   <header class="header">
+    <button onclick="window.location.href='carrinho.html'" class="btn">
+  Ver Carrinho
+</button>
     <h1>Guilherme & Gabriela</h1>
     <p>Nos ajude a começar nossa nova vida</p>
   </header>
-  
-    <!-- Abas -->
-     
-<div class="tabs-wrapper">
-  <button id="prevTab" class="arrow">‹</button>
 
-  <div class="tabs-viewport">
-    <div class="tabs-track" id="tabsContainer">
-      <!-- JS injeta as tabs -->
+  <!-- GALERIA -->
+  <section class="gallery">
+    <h2>Nossa história</h2>
+
+    <div class="photos">
+      <img src="assets/img/foto1.jpg" alt="Foto do casal">
+      <img src="assets/img/foto2.jpg" alt="Foto do casal">
+      <img src="assets/img/foto3.jpg" alt="Foto do casal">
     </div>
+  </section>
+
+  <!-- TABS -->
+  <div class="tabs-wrapper">
+    <button id="prevTab" class="arrow">‹</button>
+
+    <div class="tabs-viewport">
+      <div class="tabs-track" id="tabsContainer">
+        <!-- JS injeta as tabs -->
+      </div>
+    </div>
+
+    <button id="nextTab" class="arrow">›</button>
   </div>
 
-  <button id="nextTab" class="arrow">›</button>
-</div>
-
-
+  <!-- LISTA DE PRESENTES -->
   <section class="gift-section">
+    <div id="gift-list" class="gift-list"></div>
+  </section>
 
-  <!-- Lista de presentes -->
-  <div id="gift-list" class="gift-list"></div>
-</section>
-
-  <main class="container" id="gift-list"></main>
-
-  <script src="js/gifts.js"></script>
-  <script src="js/main.js"></script>
-</body>
-</html>
-
+  <!-- SCRIPTS (ORDEM CORRETA) -->
 <script src="js/data.js"></script>
+<script src="js/pix.js"></script>  
 <script src="js/gifts.js"></script>
 <script src="js/tabs.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

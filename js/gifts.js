@@ -1,7 +1,9 @@
-
 const giftList = document.getElementById("gift-list");
 
+
 function renderGifts(category) {
+  if (!giftList) return;
+
   giftList.innerHTML = "";
 
   const filtered = gifts.filter(g => g.category === category);
@@ -15,10 +17,18 @@ function renderGifts(category) {
       <h3>${gift.name}</h3>
       <p class="price">R$ ${gift.price.toFixed(2)}</p>
 
-      <div class="actions">
-        <a href="pix.html?id=${gift.id}" target="_blank" class="btn">
-          Adicionar ao Carrinho (Doação em Dinheiro)
-        </a>
+      <button class="btn"
+  onclick="adicionarAoCarrinho(
+    '${gift.name}',
+    ${gift.price},
+    '${gift.image}'
+  )">
+  Doar por Pix
+</button>
+
+
+
+
         <a href="${gift.link}" target="_blank" class="btn outline">
           Comprar no site
         </a>
