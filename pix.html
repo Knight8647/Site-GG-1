@@ -1,17 +1,67 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="assets/17042027.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagamento via Pix</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <main class="container pix" id="pix-content">
-    <!-- O JS vai renderizar tudo aqui -->
+  <header class="header">
+    <h1>Pagamento via Pix</h1>
+    <p>Finalize seu presente</p>
+  </header>
+
+  <main class="pix-page">
+
+    <!-- RESUMO -->
+    <section class="pix-resumo" id="resumoPix">
+      <!-- JS renderiza aqui -->
+    </section>
+
+    <!-- PIX -->
+    <aside class="pix-aside">
+      <div class="pix-card">
+
+        <img src="assets/qrcodepix.png" class="pix-qrcode">
+
+        <p class="pix-label">Chave Pix</p>
+
+        <p class="pix-chave" id="pixKey">
+00020126580014br.gov.bcb.pix0114+55459884235620218Lista de Casamento5204000053039865802BR5925GUILHERME AUGUSTO DE OLIV6009Sao Paulo62260522GuilhermeAugustodeOliv630455BE
+        </p>
+
+        <button class="btn outline btn-copy" onclick="copiarPix()">
+          Copiar chave Pix
+        </button>
+
+        <button class="btn btn-pix" onclick="abrirModal()">
+          Já fiz o pagamento
+        </button>
+
+        <div class="mensagem-box">
+          <textarea id="mensagemNoivos"
+            placeholder="Deixe uma mensagem para os noivos 💙"></textarea>
+        </div>
+
+      </div>
+    </aside>
+
   </main>
+
+  <!-- MODAL -->
+  <div class="modal" id="confirmModal">
+    <div class="modal-box">
+      <h2>Pagamento confirmado?</h2>
+      <p>Após confirmar, os presentes serão marcados como dados.</p>
+
+      <div class="modal-actions">
+        <button class="btn outline" onclick="fecharModal()">Cancelar</button>
+        <button class="btn" onclick="finalizarPagamento()">Confirmar</button>
+      </div>
+    </div>
+  </div>
 
   <script src="js/pix.js"></script>
 </body>

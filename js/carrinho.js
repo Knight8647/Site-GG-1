@@ -3,6 +3,7 @@ const totalEl = document.getElementById("total");
 
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
+
 function renderCarrinho() {
   lista.innerHTML = "";
   let total = 0;
@@ -44,3 +45,5 @@ function irParaPagamentoPix() {
 }
 
 renderCarrinho();
+
+
