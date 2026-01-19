@@ -55,9 +55,9 @@ body {
   text-decoration: none;
   border-radius: 12px;
 }
-.gallery {
-  text-align: center ;
-  padding: 3rem rem;
+.historia {
+  text-align: center;
+  overflow: hidden;
 }
 
 .photos {
@@ -486,4 +486,75 @@ button:disabled {
 
 .login-box input::placeholder {
   color: rgba(255,255,255,0.6);
+}
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+
+  animation: scrollFotos 60s linear infinite;
+}
+
+.carousel-track img {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  filter: blur(0.6px);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fade esquerdo */
+.carousel::before,
+.carousel::after {
+    width: 160px;
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Esquerda */
+.carousel::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    #fff 0%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+/* Direita */
+.carousel::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    #fff 0%,
+    rgba(255,255,255,0) 100%
+  );
+}
+
+/* Animação */
+@keyframes scrollFotos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
