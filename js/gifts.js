@@ -26,7 +26,7 @@ card.innerHTML = `
     <button class="btn"
       onclick="adicionarAoCarrinho('${gift.name}', ${gift.price}, '${gift.image}')"
       ${jaDado ? "disabled" : ""}>
-      ${jaDado ? "Presente já dado" : "Doar por Pix"}
+      ${jaDado ? "Presente já dado" : "Doar por pix (Adicionar ao Carrinho)"}
     </button>
 
     <a href="${gift.link}" target="_blank" class="btn outline">
