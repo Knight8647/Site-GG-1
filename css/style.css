@@ -56,15 +56,15 @@ body {
   border-radius: 12px;
 }
 .gallery {
-  text-align: center;
-  padding: 3rem 1rem;
+  text-align: center ;
+  padding: 3rem rem;
 }
 
 .photos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   gap: 1rem;
-  max-width: 1000px;
+  max-width: 2000px;
   margin: auto;
 }
 

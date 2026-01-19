@@ -1,11 +1,11 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.32.1/dist/supabase.min.js'
 
-// 1️⃣ Configuração do Supabase
+//  Configuração do Supabase
 const supabaseUrl = 'SUA_SUPABASE_URL';
 const supabaseKey = 'SUA_SUPABASE_ANON_KEY';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-// 2️⃣ Lista com os 54 produtos
+//  Lista com os 54 produtos
 const produtos = [
   { nome: "Cafeteira", preco: 350, descricao: "Cafeteira elétrica" },
   { nome: "Conjunto de pratos", preco: 220, descricao: "Pratos de porcelana" },
@@ -17,10 +17,9 @@ const produtos = [
   { nome: "Cinta abdominal", preco: 150, descricao: "Modeladora Hidrolight" },
   { nome: "Lenços para banho", preco: 50, descricao: "Lenços Cremer 20 unidades" },
   { nome: "Meia-calça gestante", preco: 180, descricao: "Sigvaris confortável" },
-  // ... continue preenchendo até os 54 produtos
 ];
 
-// 3️⃣ Função para importar todos
+// Função para importar todos
 async function importarProdutos() {
   for(const p of produtos){
     const { data, error } = await supabase
@@ -36,5 +35,5 @@ async function importarProdutos() {
   console.log("Todos os produtos foram importados!");
 }
 
-// 4️⃣ Executar
+// 4Executar
 importarProdutos();

@@ -114,7 +114,7 @@ function abrirModal() {
   const nome = obterNomeConvidado();
 
   if (!nome.trim()) {
-    alert("Por favor, informe seu nome 😊");
+    alert("Por favor, informe seu nome antes de finalizar o presente.");
     return;
   }
   document.getElementById("confirmModal").style.display = "flex";
