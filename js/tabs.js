@@ -4,7 +4,7 @@ const nextBtn = document.getElementById("nextTab");
 
 let categoriaAtiva = categorias[0].id;
 const visiveis = 5;
-let posicao = categorias.length; // 👈 começa no meio
+let posicao = categorias.length; // começa no meio
 
 function criarTabs() {
   const duplicadas = [...categorias, ...categorias, ...categorias];

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" href="assets/17042027.ico" type="image/x-icon">
@@ -8,18 +11,19 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header class="header">
-    <button onclick="window.location.href='carrinho.html'" class="btn">
+  <section class ="hero">
+        <button onclick="window.location.href='carrinho.html'" class="btn">
   Ver Carrinho
 </button>
-    <h1>Guilherme & Gabriela</h1>
-    <p>Nos ajude a começar nossa nova vida</p>
+      <header class="header">
+    <img src="assets/LogoGG.png" alt="Logo Guilherme e Gabriela" class="logo" />
+    <h1 class="titulo-nomes">Guilherme & Gabriela</h1>
+    <p class="subtitulo">Nos ajude a começar nossa nova vida</p>
   </header>
-
+  </section>
   <!-- GALERIA -->
   <section class="historia">
-    <h2>Nossa história</h2>
-
+    <h2 class="titulo-secao">Nossa história</h2>
     <div class="carousel">
       <div class="carousel-track">
         <img src="assets/Fotogg1.jpg" alt="Foto nossa">
@@ -42,10 +46,16 @@
       </div>
     </div>
   </section>
+  <section class="frase-transicao">
+  <p class="texto-frase">
+    Abaixo você encontra nossa lista de casamento com os presentes que escolhemos para nossa nova vida juntos.
+  </p>
+</section>
+
 
   <!-- TABS -->
   <div class="tabs-wrapper">
-    <button id="prevTab" class="arrow">‹</button>
+    <button id="prevTab" class="arrow">⇦</button>
 
     <div class="tabs-viewport">
       <div class="tabs-track" id="tabsContainer">
@@ -53,7 +63,7 @@
       </div>
     </div>
 
-    <button id="nextTab" class="arrow">›</button>
+    <button id="nextTab" class="arrow">⇨</button>
   </div>
 
   <!-- LISTA DE PRESENTES -->
@@ -63,10 +73,9 @@
 
   <!-- SCRIPTS (ORDEM CORRETA) -->
 <script src="js/data.js"></script>
-<script src="js/pix.js"></script>  
+<script src="js/carrinho-core.js"></script>
 <script src="js/gifts.js"></script>
 <script src="js/tabs.js"></script>
-<script src="js/main.js"></script>
 
 </body>
 </html>

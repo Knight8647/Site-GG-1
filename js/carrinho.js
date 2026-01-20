@@ -1,16 +1,24 @@
-const lista = document.getElementById("lista-carrinho");
+const lista = document.getElementById("carrinho-lista");
 const totalEl = document.getElementById("total");
 
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 
 function renderCarrinho() {
+  const lista = document.getElementById("listaCarrinho");
+  const totalEl = document.getElementById("totalCarrinho");
+
+  if (!lista || !totalEl) {
+    return;
+  }
+
+  const carrinho = obterCarrinho();
   lista.innerHTML = "";
   let total = 0;
 
   if (carrinho.length === 0) {
     lista.innerHTML = "<p>Seu carrinho está vazio.</p>";
-    totalEl.innerText = "";
+    totalEl.textContent = "0";
     return;
   }
 
@@ -18,20 +26,21 @@ function renderCarrinho() {
     total += item.preco;
 
     const div = document.createElement("div");
-    div.className = "gift-card";
+    div.className = "carrinho-item";
 
     div.innerHTML = `
-      <h3>${item.nome}</h3>
-      <p>R$ ${item.preco.toFixed(2)}</p>
-      <button class="btn outline" onclick="removerItem(${index})">
-        Remover
-      </button>
+      <img src="${item.imagem}" class="img-carrinho">
+      <div>
+        <p>${item.nome}</p>
+        <strong>R$ ${item.preco.toFixed(2)}</strong>
+      </div>
+      <button onclick="removerItem(${index})">✕</button>
     `;
 
     lista.appendChild(div);
   });
 
-  totalEl.innerText = `Total: R$ ${total.toFixed(2)}`;
+  totalEl.textContent = total.toFixed(2);
 }
 
 function removerItem(index) {

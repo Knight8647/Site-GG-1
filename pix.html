@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pagamento via Pix</title>
+    <link rel="icon" href="assets/17042027.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -24,12 +25,11 @@
     <aside class="pix-aside">
       <div class="pix-card">
 
-        <img src="assets/qrcodepix.png" class="pix-qrcode">
+        <div id="qrcode"></div>
 
         <p class="pix-label">Chave Pix</p>
 
         <p class="pix-chave" id="pixKey">
-00020126580014br.gov.bcb.pix0114+55459884235620218Lista de Casamento5204000053039865802BR5925GUILHERME AUGUSTO DE OLIV6009Sao Paulo62260522GuilhermeAugustodeOliv630455BE
         </p>
 
         <button class="btn outline btn-copy" onclick="copiarPix()">
@@ -61,7 +61,7 @@
   <div class="modal" id="confirmModal">
     <div class="modal-box">
       <h2>Pagamento confirmado?</h2>
-      <p>Após confirmar, os presentes serão marcados como dados.</p>
+      <p>Após confirmar, os presentes serão marcados como presenteados!</p>
 
       <div class="modal-actions">
         <button class="btn outline" onclick="fecharModal()">Cancelar</button>
@@ -69,7 +69,11 @@
       </div>
     </div>
   </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
-  <script src="js/pix.js"></script>
+<script src="js/carrinho-core.js"></script>
+<script src="js/pix-protect.js"></script>
+<script src="js/pix.js"></script>
+
 </body>
 </html>

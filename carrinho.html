@@ -12,22 +12,35 @@
     <p>Confira os presentes selecionados</p>
   </header>
 
-  <main class="container">
+<main class="carrinho-page">
+
+  <!-- LISTA DE ITENS -->
+  <section class="carrinho-lista">
+    <h2>Seu carrinho</h2>
+    <p class="subtitulo">Confira os presentes selecionados</p>
+
     <div id="listaCarrinho"></div>
-    <h3>Total: R$ <span id="totalCarrinho">0</span></h3>
+  </section>
 
-    <script src="js/pix.js"></script>
+  <!-- RESUMO / PAGAMENTO -->
+  <aside class="carrinho-resumo">
+    <h3>Resumo</h3>
 
-
-    <div class="total">
-      <h2 id="total"></h2>
+    <div class="resumo-linha">
+      <span>Total</span>
+      <strong>R$ <span id="totalCarrinho">0</span></strong>
     </div>
 
-    <button class="btn" onclick="irParaPagamentoPix()">
-      Pagar tudo com Pix
+    <button class="btn btn-pix" onclick="irParaPagamentoPix()">
+      Finalizar compra via Pix
     </button>
-  </main>
+  </aside>
 
-  <script src="js/carrinho.js"></script>
+</main>
+
+<script src="js/carrinho-core.js"></script>
+<script src="js/carrinho.js"></script>
+
+
 </body>
 </html>

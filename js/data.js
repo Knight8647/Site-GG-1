@@ -1,8 +1,7 @@
 const categorias = [
   { id: "Eletro", nome: "Eletrodomésticos" },
   { id: "Utensilhos", nome: "Cozinha" },
-  { id: "Banheiro", nome: "Itens para Banheiro" },
-  { id: "Vale", nome: "Vale Presente" },
+  { id: "Banheiro", nome: "Banheiro" },
   { id: "Quarto", nome: "Quarto" },
   { id: "SalaEstar", nome: "Sala de Estar" },
   { id: "Noivos", nome: "Vida dos Noivos" },
@@ -280,7 +279,7 @@ const gifts = [
   //Vale Presente
   {
     id: 30,
-    category: "Vale",
+    category: "Noivos",
     name: "Vale Presente R$ 200,00",
     price: 200,
     image: "",
@@ -289,7 +288,7 @@ const gifts = [
   },
   {
     id: 31,
-    category: "Vale",
+    category: "Noivos",
     name: "Vale Presente R$ 500,00",
     price: 500,
     image: "",
@@ -298,7 +297,7 @@ const gifts = [
   }, 
   {
     id: 32,
-    category: "Vale",
+    category: "Noivos",
     name: "Vale Presente R$ 1.000,00",
     price: 1000,
     image: "",
@@ -306,7 +305,7 @@ const gifts = [
   },
   {
     id: 33,
-    category: "Vale",
+    category: "Noivos",
     name: "Vale Presente R$ 1.500,00",
     price: 1500,
     image: "",
@@ -314,7 +313,7 @@ const gifts = [
   },
   {
     id: 34,
-    category: "Vale",
+    category: "Noivos",
     name: "Vale Presente R$ 2.000,00",
     price: 2000,
     image: "",
@@ -322,7 +321,7 @@ const gifts = [
   },
   {
     id: 35,
-    category: "Vale",
+    category: "Noivos",
     name: "Vale Presente R$ 2.500,00",
     price: 2500,
     image: "",
@@ -330,7 +329,7 @@ const gifts = [
   },
   {
     id: 36,
-    category: "Vale",
+    category: "Noivos",
     name: "Vale Presente R$ 3.000,00",
     price: 3000,
     image: "",
