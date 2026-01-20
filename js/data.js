@@ -1,5 +1,8 @@
 const categorias = [
   { id: "Eletro", nome: "Eletrodomésticos" },
+  { id: "Cozinha", nome: "Cozinha" },
+  { id: "Banheiro", nome: "Itens para Banheiro" },
+  { id: "Vale", nome: "Vale Presente" },
   { id: "Utensilhos", nome: "Cozinha" },
   { id: "Banheiro", nome: "Banheiro" },
   { id: "Quarto", nome: "Quarto" },
@@ -129,7 +132,7 @@ const gifts = [
     pix: "",
     link: "https://www.magazineluiza.com.br/liquidificador-mondial-l-99-com-filtro-copo-cristal-3-velocidades-pulsar-550w-branco/p/fj8471j53d/ep/liqu/?seller_id=magazineluiza",
   },
-  // Utensilhos
+  // Cozinha
   {
   id: 14,
   category: "Utensilhos",
