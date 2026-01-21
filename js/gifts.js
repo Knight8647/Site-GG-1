@@ -1,3 +1,4 @@
+
 const giftList = document.getElementById("gift-list");
 
 function obterComprasViaSite() {
@@ -17,6 +18,13 @@ document.addEventListener("click", function (e) {
   const btn = e.target.closest(".btn-site");
   if (!btn) return;
 
+  // BLOQUEIA SE NÃO ESTIVER LOGADO
+  if (!usuarioLogado()) {
+    e.preventDefault();
+    abrirModalLogin();
+    return;
+  }
+
   e.preventDefault();
 
   const nomePresente = btn.dataset.nome;
@@ -26,16 +34,13 @@ document.addEventListener("click", function (e) {
 
   if (confirmar) {
     salvarCompraViaSite(nomePresente);
+    renderGifts(categoriaAtiva); // some com o botão
   }
 
-  // Em ambos os casos, abre o site
+  // SEMPRE abre o site
   window.open(link, "_blank");
-
-  // Se confirmou, re-renderiza para esconder o botão
-  if (confirmar) {
-    renderGifts(categoriaAtiva);
-  }
 });
+
 function renderGifts(category) {
   if (!giftList) return;
 
@@ -58,21 +63,24 @@ function renderGifts(category) {
       <h3>${gift.name}</h3>
       <p class="price">R$ ${gift.price.toFixed(2)}</p>
 
-      <div class="actions">
-        <button class="btn btn-add"
-          data-nome="${gift.name}"
-          data-preco="${gift.price}"
-          data-imagem="${gift.image}"
-          >Doar por Pix (Adicionar ao carrinho)
-        </button>
+      <button
+        class="btn btn-add"
+        data-nome="${gift.name}"
+        data-preco="${gift.price}"
+        data-imagem="${gift.image}"
+      >
+        Doar por Pix
+      </button>
 
       ${compradoNoSite ? "" : `
-      <a href="${gift.link}"
-        class="btn outline btn-site"
-        data-nome="${gift.name}"
-        data-link="${gift.link}">
-        Comprar no site
-      </a>
+        <a
+          href="${gift.link}"
+          class="btn outline btn-site"
+          data-nome="${gift.name}"
+          data-link="${gift.link}"
+        >
+          Comprar no site
+        </a>
       `}
       </div>
       
@@ -80,3 +88,23 @@ function renderGifts(category) {
     giftList.appendChild(card);
   });
 }
+document.addEventListener("click", function (e) {
+  const btn = e.target.closest(".btn-add");
+  if (!btn) return;
+
+  e.preventDefault();
+
+  if (!usuarioLogado()) {
+    abrirModalLogin();
+    return;
+  }
+
+  adicionarAoCarrinho(
+    btn.dataset.nome,
+    btn.dataset.preco,
+    btn.dataset.imagem
+  );
+
+  alert("Presente adicionado ao carrinho!");
+});
+

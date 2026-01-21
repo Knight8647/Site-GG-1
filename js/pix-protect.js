@@ -1,13 +1,10 @@
 // pix-protect.js
-(function () {
-  function obterCarrinho() {
-    return JSON.parse(localStorage.getItem("carrinho")) || [];
-  }
-
+document.addEventListener("DOMContentLoaded", () => {
   const carrinho = obterCarrinho();
 
-  if (!Array.isArray(carrinho) || carrinho.length === 0) {
-    alert("Seu carrinho está vazio. Escolha um presente antes de continuar.");
+  if (carrinho.length === 0) {
+    alert("Você não pode pagar sem itens no carrinho.");
     window.location.href = "index.html";
   }
-})();
+});
+

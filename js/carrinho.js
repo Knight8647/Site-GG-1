@@ -1,7 +1,6 @@
 const lista = document.getElementById("carrinho-lista");
 const totalEl = document.getElementById("total");
 
-let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
 
 function renderCarrinho() {
@@ -16,11 +15,12 @@ function renderCarrinho() {
   lista.innerHTML = "";
   let total = 0;
 
-  if (carrinho.length === 0) {
-    lista.innerHTML = "<p>Seu carrinho está vazio.</p>";
-    totalEl.textContent = "0";
-    return;
-  }
+if (carrinho.length === 0) {
+  lista.innerHTML = "<p>Seu carrinho está vazio.</p>";
+  totalEl.textContent = "0,00";
+  return;
+}
+
 
   carrinho.forEach((item, index) => {
     total += item.preco;
@@ -44,8 +44,9 @@ function renderCarrinho() {
 }
 
 function removerItem(index) {
+  const carrinho = obterCarrinho();
   carrinho.splice(index, 1);
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  salvarCarrinho(carrinho);
   renderCarrinho();
 }
 
