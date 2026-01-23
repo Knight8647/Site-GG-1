@@ -79,7 +79,7 @@ function atualizarAreaLogin() {
 
   if (!convidado) {
     area.innerHTML = `
-      <button class="btn outline" onclick="abrirModalLogin()">
+      <button class="btn btn-login" onclick="abrirModalLogin()">
         Fazer login
       </button>
     `;
@@ -88,7 +88,7 @@ function atualizarAreaLogin() {
 
   area.innerHTML = `
     <div class="usuario-menu">
-      <button class="btn outline" onclick="toggleMenuUsuario()">
+      <button class="btn btn-login" onclick="toggleMenuUsuario()">
         Olá, ${convidado.nome} 👋
       </button>
 

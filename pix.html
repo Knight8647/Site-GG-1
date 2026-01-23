@@ -27,29 +27,23 @@
 
         <div id="qrcode"></div>
 
-        <p class="pix-label">Chave Pix</p>
+        <p class="pix-label"><img src="assets/qrcodePix.fw.png" alt="QR Code Pix"></p>
 
         <p class="pix-chave" id="pixKey">
+          00020126580014br.gov.bcb.pix0114+55459884235620218Lista de Casamento5204000053039865802BR5925GUILHERME AUGUSTO DE OLIV6009Sao Paulo62260522GuilhermeAugustodeOliv630455BE
         </p>
 
         <button class="btn outline btn-copy" onclick="copiarPix()">
           Copiar chave Pix
         </button>
-        <div class="login-box">
-          <label for="nomeConvidado">Seu nome</label>
-          <input
-            type="text"
-            id="nomeConvidado"
-            placeholder="Ex: Gui e Gabi"
-            >
-          </div>
+
         <button class="btn btn-pix" onclick="abrirModal()">
           Já fiz o pagamento
         </button>
 
         <div class="mensagem-box">
           <textarea id="mensagemNoivos"
-            placeholder="Deixe uma mensagem para os noivos 💙"></textarea>
+            placeholder="Deixe uma mensagem para os noivos"></textarea>
         </div>
 
       </div>
@@ -61,7 +55,6 @@
   <div class="modal" id="confirmModal">
     <div class="modal-box">
       <h2>Pagamento confirmado?</h2>
-      <p>Após confirmar, os presentes serão marcados como presenteados!</p>
 
       <div class="modal-actions">
         <button class="btn outline" onclick="fecharModal()">Cancelar</button>
@@ -69,7 +62,6 @@
       </div>
     </div>
   </div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script src="js/carrinho-core.js"></script>
 <script src="js/pix-protect.js"></script>

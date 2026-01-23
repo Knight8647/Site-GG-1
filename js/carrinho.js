@@ -4,9 +4,10 @@ const totalEl = document.getElementById("total");
 
 
 function renderCarrinho() {
+  
   const lista = document.getElementById("listaCarrinho");
   const totalEl = document.getElementById("totalCarrinho");
-
+  
   if (!lista || !totalEl) {
     return;
   }
@@ -49,6 +50,7 @@ function removerItem(index) {
   salvarCarrinho(carrinho);
   renderCarrinho();
 }
+
 
 function irParaPagamentoPix() {
   window.location.href = "pix.html";

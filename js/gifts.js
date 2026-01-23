@@ -1,6 +1,7 @@
 
 const giftList = document.getElementById("gift-list");
 
+
 function obterComprasViaSite() {
   return JSON.parse(localStorage.getItem("comprasViaSite")) || [];
 }

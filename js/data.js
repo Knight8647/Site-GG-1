@@ -7,6 +7,7 @@ const categorias = [
   { id: "Noivos", nome: "Vida dos Noivos" },
 ];
 
+
 //Eletro
 const gifts = [
   {
