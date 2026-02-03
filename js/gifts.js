@@ -35,10 +35,9 @@ document.addEventListener("click", function (e) {
 
   if (confirmar) {
     salvarCompraViaSite(nomePresente);
-    renderGifts(categoriaAtiva); // some com o botão
+    renderGifts(categoriaAtiva);
   }
 
-  // SEMPRE abre o site
   window.open(link, "_blank");
 });
 
