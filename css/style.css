@@ -546,7 +546,7 @@ button:disabled {
 
 .frase-transicao p {
   opacity: 0.85;
-  font-size: camp(18px, 2.5vw, 22px);
+  font-size: clamp(18px, 2.5vw, 22px);
   line-height: 1.6;
   color: #334155;
   font-weight: 500;
@@ -601,14 +601,14 @@ button:disabled {
 }
 
 .btn-carrinho {
-  position: absolute;
+  position: flex;
   top: 13px;
   left: 180px;
   background: #0f172a;
   color: #fff;
   z-index: 10;
   padding: 8px 16px;
-  font-size: 14px;
+  font-size: clamp(15px, 2vw, 18px);
   border-radius: 999px;
   font-weight: 600;
   white-space: nowrap;
@@ -919,50 +919,48 @@ button[disabled] {
   transform: translateY(-1px);
   box-shadow: 0 10px 22px rgba(0,0,0,0.18);
 }
+/* HERO ACTIONS — SIMPLES E CORRETO */
+
+.hero {
+  position: relative;
+}
+
+/* Desktop */
 .hero-actions {
   position: absolute;
   top: 20px;
   left: 20px;
 
   display: flex;
-  align-items: center;
   gap: 12px;
-
-  z-index: 10;
 }
 
-/* impede quebra de linha */
-.hero-actions > * {
-  white-space: nowrap;
-}
-@media (max-width: 600px) {
+/* Mobile */
+@media (max-width: 480px) {
   .hero-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
-  .btn-login,
-  .btn-carrinho {
-    font-size: 13px;
-    padding: 8px 14px;
+    position: static;        
+        display: flex;
+  /* 🔴 ISSO É O SEGREDO */
+    flex-direction: column;    /* empilha */
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 10px;
   }
 }
+
+/* Botões */
 .hero-actions .btn {
   height: 40px;
   padding: 0 16px;
   border-radius: 999px;
-  font-size: 14px;
-}
-.btn-login {
-  background: #0f172a;    
-  color: #fff;
-  border: 1px solid #0f172a;
-
-  font-weight: 600;
   white-space: nowrap;
 }
+/* ===============================
+   FIX REAL — HERO NO MOBILE
+   =============================== */
 
-.btn-login:hover {
-  background: #0f172a;
+@media (max-width: 480px) {
+  .hero {
+    display: block;      /* desliga o flex só no mobile */
+  }
 }
