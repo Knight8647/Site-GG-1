@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho</title>
+
+  <!-- CSS ISOLADO -->
+  <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+
+<main class="cart-page">
+
+  <!-- HEADER -->
+  <header class="cart-header">
+    <h1>Seu Carrinho</h1>
+    <p>Revise os presentes antes de finalizar</p>
+  </header>
+
+  <!-- CONTEÚDO -->
+  <section class="cart-content">
+
+    <!-- LISTA -->
+    <div class="cart-list">
+      <!-- itens via JS -->
+    </div>
+    <div class="select-all-card">
+    <label class="select-all-content">
+        <input type="checkbox" id="selectAllDesktop">
+        <span>Selecionar todos</span>
+    </label>
+    </div>
+
+    <!-- RESUMO (DESKTOP) -->
+    <aside class="cart-summary">
+      <h3>Resumo</h3>
+
+      <div class="cart-summary-line">
+        <span>Total</span>
+        <strong>R$ 0,00</strong>
+      </div>
+
+      <button class="cart-btn-primary">
+        Finalizar via Pix
+      </button>
+    </aside>
+
+  </section>
+
+  <!-- FOOTER MOBILE -->
+  <footer class="cart-footer">
+
+  <label class="cart-select-all">
+    <input type="checkbox" id="selectAllMobile">
+    Selecionar todos
+  </label>
+
+  <div class="cart-footer-total">
+    Total: <strong>R$ 0,00</strong>
+  </div>
+
+  <button class="cart-btn-primary">
+    Finalizar (0)
+  </button>
+
+</footer>
+
+
+</main>
+<script src="../js/carrinho-core.js"></script>
+<script src="../cart/cart.js"></script>
+</body>
+</html>

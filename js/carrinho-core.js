@@ -1,31 +1,41 @@
+const CART_KEY = "cartItems";
+
 function obterCarrinho() {
-  return JSON.parse(localStorage.getItem("carrinho")) || [];
+  return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
 function salvarCarrinho(carrinho) {
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  localStorage.setItem(CART_KEY, JSON.stringify(carrinho));
 }
 
 function adicionarAoCarrinho(nome, preco, imagem) {
-  if (!nome || !preco) {
-    console.warn("Item inválido ignorado:", nome, preco);
-    return;
-  }
-
   const carrinho = obterCarrinho();
 
+
   carrinho.push({
-    nome,
-    preco: Number(preco),
-    imagem
+    id: Date.now(),
+    nome: nome,
+    preco: preco,
+    imagem: imagem, //  ESSENCIAL
+    selected: true
   });
 
   salvarCarrinho(carrinho);
+  atualizarBadgeCarrinho(); //  ESSENCIAL
 }
 
 
-function calcularTotalCarrinho() {
+function removerDoCarrinho(id) {
+  const carrinho = obterCarrinho().filter(item => item.id !== id);
+  salvarCarrinho(carrinho);
+}
+function atualizarBadgeCarrinho() {
+  const badge = document.querySelector("#badgeCarrinho");
+  if (!badge) return;
+
   const carrinho = obterCarrinho();
-  return carrinho.reduce((t, i) => t + Number(i.preco || 0), 0);
-}
+  badge.textContent = carrinho.length;
 
+  badge.style.display = carrinho.length > 0 ? "inline-flex" : "none";
+}
+document.addEventListener("DOMContentLoaded", atualizarBadgeCarrinho);

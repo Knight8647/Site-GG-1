@@ -4,43 +4,65 @@
   <meta charset="UTF-8">
   <title>Carrinho - Lista de Casamento</title>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/carrinho.css">
+
 </head>
+
 <body>
 
-  <header class="header">
-    <h1>Seu Carrinho</h1>
-    <p>Confira os presentes selecionados</p>
-  </header>
+<main class="pagina-carrinho">
 
-<main class="carrinho-page">
+  <div class="carrinho-page">
 
-  <!-- LISTA DE ITENS -->
-  <section class="carrinho-lista">
-    <h2>Seu carrinho</h2>
-    <p class="subtitulo">Confira os presentes selecionados</p>
+    <!-- HEADER -->
+    <header class="carrinho-header">
+      <h1>Seu Carrinho</h1>
+      <p>Confira os presentes selecionados</p>
+    </header>
 
-    <div id="listaCarrinho"></div>
-  </section>
+    <!-- LISTA -->
+    <section class="carrinho-lista">
+      <div id="listaCarrinho"></div>
+    </section>
 
-  <!-- RESUMO / PAGAMENTO -->
-  <aside class="carrinho-resumo">
-    <h3>Resumo</h3>
+    <!-- RESUMO -->
+    <aside class="carrinho-resumo">
+      <h3>Resumo</h3>
 
-    <div class="resumo-linha">
-      <span>Total</span>
-      <strong>R$ <span id="totalCarrinho">0</span></strong>
+      <div class="resumo-linha">
+        <span>Total</span>
+        <strong>R$ <span id="totalCarrinho">0</span></strong>
+      </div>
+
+      <button class="cart-btn-pix" onclick="irParaPagamentoPix()">
+        Finalizar compra via Pix
+      </button>
+    </aside>
+
+  </div>
+
+  <!-- FOOTER MOBILE -->
+  <div class="carrinho-footer-mobile">
+    <label>
+      <input type="checkbox" id="checkTodos" checked>
+      Todos os itens
+    </label>
+
+    <div class="footer-total">
+      Total: R$ <span id="totalSelecionado">0,00</span>
     </div>
 
-    <button class="btn btn-pix" onclick="irParaPagamentoPix()">
-      Finalizar compra via Pix
+    <button class="btn-prosseguir" onclick="irParaPagamentoPix()">
+      Prosseguir (0)
     </button>
-  </aside>
+  </div>
 
 </main>
+
 
 <script src="js/carrinho-core.js"></script>
 <script src="js/carrinho.js"></script>
 
-
 </body>
+
 </html>

@@ -44,7 +44,7 @@ function acessarCarrinho() {
     return;
   }
 
-  window.location.href = "carrinho.html";
+  window.location.href = "cart.html";
 }
 
 function acaoProtegida(acao) {
@@ -138,7 +138,7 @@ if (btnCarrinho) {
       return;
     }
 
-    window.location.href = "carrinho.html";
+    window.location.href = "cart/cart.html";
   });
 }
 window.usuarioLogado = function () {

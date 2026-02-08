@@ -15,31 +15,7 @@ function salvarCompraViaSite(nomePresente) {
   }
 }
 
-document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".btn-site");
-  if (!btn) return;
 
-  // BLOQUEIA SE NÃO ESTIVER LOGADO
-  if (!usuarioLogado()) {
-    e.preventDefault();
-    abrirModalLogin();
-    return;
-  }
-
-  e.preventDefault();
-
-  const nomePresente = btn.dataset.nome;
-  const link = btn.dataset.link;
-
-  const confirmar = confirm("Deseja confirmar sua compra via site?");
-
-  if (confirmar) {
-    salvarCompraViaSite(nomePresente);
-    renderGifts(categoriaAtiva);
-  }
-
-  window.open(link, "_blank");
-});
 
 function renderGifts(category) {
   if (!giftList) return;
@@ -58,53 +34,102 @@ function renderGifts(category) {
     const card = document.createElement("div");
     card.className = "gift-card";
 
-    card.innerHTML = `
-      <img src="${gift.image}" alt="${gift.name}">
-      <h3>${gift.name}</h3>
-      <p class="price">R$ ${gift.price.toFixed(2)}</p>
+ card.innerHTML = `
+  <img src="${gift.image}" alt="${gift.name}">
+  <h3>${gift.name}</h3>
+  <p class="price">R$ ${gift.price.toLocaleString("pt-BR", {
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2
+})}
+  </p>
+  <button
+    class="btn btn-ver-item"
+    data-id="${gift.id}"
+  >
+    Ver item
+  </button>
+`;
 
-      <button
-        class="btn btn-add"
-        data-nome="${gift.name}"
-        data-preco="${gift.price}"
-        data-imagem="${gift.image}"
-      >
-        Doar por Pix
-      </button>
-
-      ${compradoNoSite ? "" : `
-        <a
-          href="${gift.link}"
-          class="btn outline btn-site"
-          data-nome="${gift.name}"
-          data-link="${gift.link}"
-        >
-          Comprar no site
-        </a>
-      `}
-      </div>
-      
-    `;
     giftList.appendChild(card);
   });
 }
 document.addEventListener("click", function (e) {
-  const btn = e.target.closest(".btn-add");
+  const btn = e.target.closest(".btn-ver-item");
   if (!btn) return;
 
-  e.preventDefault();
+  const id = parseInt(btn.dataset.id, 10);
+  abrirModalPresente(id);
+});
 
-  if (!usuarioLogado()) {
-    abrirModalLogin();
+function abrirModalPresente(id) {
+  const comprasViaSite =
+  JSON.parse(localStorage.getItem("comprasViaSite")) || [];
+
+const btnSite = document.getElementById("modalBtnSite");
+  const gift = gifts.find(g => g.id === id);
+  if (!gift) return;
+
+if (comprasViaSite.includes(gift.name)) {
+  btnSite.style.display = "none";
+} else {
+  btnSite.style.display = "block";
+}
+
+
+  document.getElementById("modalPresenteImg").src = gift.image;
+  document.getElementById("modalPresenteNome").textContent = gift.name;
+  document.getElementById("modalPresentePreco").textContent =
+    `R$ ${gift.price.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
+
+document.getElementById("modalBtnPix").onclick = () => {
+  if (typeof adicionarAoCarrinho !== "function") {
+    alert("Erro ao adicionar ao carrinho.");
     return;
   }
 
-  adicionarAoCarrinho(
-    btn.dataset.nome,
-    btn.dataset.preco,
-    btn.dataset.imagem
+ adicionarAoCarrinho(
+  gift.name,
+  gift.price,
+gift.image
+);
+
+atualizarBadgeCarrinho();
+
+  fecharModalPresente();
+  alert("Presente adicionado ao carrinho.");
+};
+
+  document.getElementById("modalBtnSite").onclick = () => {
+      if (!usuarioLogado()) {
+    abrirModalLogin();
+    return;
+      }
+  
+  const confirmar = confirm(
+    "Você deseja confirmar que comprou este presente pelo site?"
   );
+  if (confirmar) {
+    salvarCompraViaSite(gift.name);
 
-  alert("Presente adicionado ao carrinho!");
+    // atualiza a lista de presentes
+    renderGifts(categoriaAtiva);
+
+    // opcional: feedback visual
+    alert("Obrigado! Registramos sua compra");
+  }
+
+  // SEMPRE redireciona para o site
+  window.open(gift.link, "_blank");
+};
+
+  document.getElementById("modalPresente").classList.add("active");
+}
+
+function fecharModalPresente() {
+  document.getElementById("modalPresente").classList.remove("active");
+}
+document.getElementById("modalPresente").addEventListener("click", (e) => {
+  if (e.target.id === "modalPresente") {
+    fecharModalPresente();
+  }
 });
-
