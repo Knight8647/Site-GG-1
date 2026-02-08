@@ -1,3 +1,10 @@
+import "./carrinho-core.js";
+const itensSelecionados = obterItensSelecionados();
+if (!itensSelecionados.length) {
+  window.location.href = "/cart.html";
+  throw new Error("Pix sem itens selecionados");
+}
+
 const PIX_CHAVE = "+5545988423562";
 const PIX_NOME = "GUILHERME AUGUSTO DE OLIV";
 const PIX_CIDADE = "SAO PAULO";
@@ -44,6 +51,7 @@ const carrinho = obterItensSelecionados();
   totalEl.textContent = formatarBRL(total);
 }
 
+
 function gerarPayloadPix(valor) {
   const valorFormatado = valor.toFixed(2);
 
@@ -83,19 +91,26 @@ function calcularCRC(str) {
 
 
 window.removerItem = function (index) {
+  const carrinhoCompleto = obterCarrinho();
   const selecionados = obterItensSelecionados();
-  const itemRemovido = selecionados[index];
 
-  if (!itemRemovido) return;
+  const item = selecionados[index];
+  if (!item) return;
 
-  const carrinho = obterCarrinho().filter(
-    item => item !== itemRemovido
-  );
+  // desmarca o item no carrinho real
+  carrinhoCompleto.forEach(i => {
+    if (i.id === item.id) {
+      i.selected = false;
+    }
+  });
 
-  salvarCarrinho(carrinho);
+  salvarCarrinho(carrinhoCompleto);
+
   renderCarrinho();
   renderResumoPix();
 };
+
+
 
 
 renderCarrinho();
@@ -186,22 +201,31 @@ function fecharModal() {
 
 function finalizarPagamento() {
   const selecionados = obterItensSelecionados();
-  const carrinho = obterCarrinho();
-  const dados = JSON.parse(localStorage.getItem("presentesDados")) || [];
-    const mensagem = document.getElementById("mensagemNoivos")?.value || "";
+  const carrinhoCompleto = obterCarrinho();
 
+  if (!selecionados.length) {
+    alert("Nenhum item selecionado.");
+    return;
+  }
+
+  const mensagem = document.getElementById("mensagemNoivos")?.value || "";
   localStorage.setItem("mensagemNoivos", mensagem);
 
-  carrinho.forEach(item => {
+  const dados = JSON.parse(localStorage.getItem("presentesDados")) || [];
+
+  selecionados.forEach(item => {
     dados.push(item.nome);
   });
-  const restante = carrinho.filter(item => !item.selected);
+
+  // mantém APENAS os NÃO pagos
+  const restante = carrinhoCompleto.filter(item => !item.selected);
   salvarCarrinho(restante);
+
   localStorage.setItem("presentesDados", JSON.stringify(dados));
-  localStorage.removeItem("carrinho");
 
   window.location.href = "index.html";
 }
+
 function obterNomeConvidado() {
   return localStorage.getItem("nomeConvidado") || "";
 }
@@ -215,15 +239,3 @@ if (inputNome) {
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const carrinho = obterCarrinho();
-
-  if (carrinho.length === 0) {
-    alert("Carrinho vazio.");
-    window.location.href = "index.html";
-    return;
-  }
-
-  const total = calcularTotalCarrinho();
-
-});

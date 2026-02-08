@@ -321,3 +321,7 @@ body {
     background-color: #f1f5f9;
   }
 }
+.cart-btn-primary.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

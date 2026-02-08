@@ -1,14 +1,10 @@
-const cart = obterCarrinho();
 
-let cartItems = obterCarrinho().map(item => ({
-  nome: item.nome,
-  preco: item.preco,
-  imagem: item.imagem,
-  selected: item.selected ?? true
+import "../js/carrinho-core.js";
+let cartItems = obterCarrinho();
+cartItems = cartItems.map(item => ({
+  ...item,
+  selected: item.selected !== false
 }));
-
-// salva já com selected
-salvarCarrinho(cartItems);
 
 // ===============================
 // ELEMENTOS
@@ -52,11 +48,11 @@ function renderCart() {
         data-index="${index}"
       >
 
-    <img 
-  src="${item.imagem || 'assets/default.png'}"
-  alt="${item.nome}"
-  class="cart-item-img"
->
+      <img 
+        src="${item.imagem || 'assets/default.png'}"
+        alt="${item.nome}"
+        class="cart-item-img"
+      >
 
 
       <div class="cart-item-info">
@@ -84,7 +80,6 @@ function bindItemEvents() {
     cb.addEventListener("change", () => {
       const index = Number(cb.dataset.index);
       cartItems[index].selected = cb.checked;
-      salvarCarrinho(cartItems);
       updateTotals();
       syncSelectAll();
     });
@@ -94,9 +89,15 @@ function bindItemEvents() {
   document.querySelectorAll(".cart-remove").forEach(btn => {
     btn.addEventListener("click", () => {
       const index = Number(btn.dataset.index);
+      const item = cartItems[index];
       cartItems.splice(index, 1);
-      salvarCarrinho(cartItems);
+
+      if (item?.id && item?.giftId) {
+        removerDoCarrinho(item.id, item.giftId);
+      }
+
       renderCart();
+
     });
   });
 }
@@ -152,7 +153,6 @@ selectAllCheckboxes.forEach(cb => {
       if (itemCheckbox) itemCheckbox.checked = checked;
     });
 
-    salvarCarrinho(cartItems);
     updateTotals();
     syncSelectAll();
   });
@@ -177,6 +177,4 @@ if (summaryBtn) summaryBtn.addEventListener("click", finalizarCompra);
 // ===============================
 renderCart();
 
-function irParaPagamentoPix() {
-  window.location.href = "/pix.html";
-}
+

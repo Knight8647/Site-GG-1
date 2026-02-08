@@ -87,11 +87,13 @@ document.getElementById("modalBtnPix").onclick = () => {
     return;
   }
 
- adicionarAoCarrinho(
+adicionarAoCarrinho(
   gift.name,
   gift.price,
-  gift.image
+  gift.image,
+  gift.id
 );
+
 
 atualizarBadgeCarrinho();
 
@@ -128,8 +130,13 @@ atualizarBadgeCarrinho();
 function fecharModalPresente() {
   document.getElementById("modalPresente").classList.remove("active");
 }
-document.getElementById("modalPresente").addEventListener("click", (e) => {
-  if (e.target.id === "modalPresente") {
-    fecharModalPresente();
-  }
-});
+const modalPresente = document.getElementById("modalPresente");
+
+if (modalPresente) {
+  modalPresente.addEventListener("click", (e) => {
+    if (e.target.id === "modalPresente") {
+      fecharModalPresente();
+    }
+  });
+}
+

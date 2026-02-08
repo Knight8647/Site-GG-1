@@ -1,22 +1,92 @@
+import { supabase } from "./supabase.js";
+
 function obterConvidado() {
   return JSON.parse(localStorage.getItem("convidado"));
 }
 
-function salvarConvidado() {
-  const nome = document.getElementById("nomeConvidado").value.trim();
-  const contato = document.getElementById("contatoConvidado").value.trim();
+async function salvarConvidado() {
+  const nomeInput = document.getElementById("nomeConvidado");
+  const telInput = document.getElementById("telefoneConvidado");
+  const emailInput = document.getElementById("emailConvidado");
 
-  if (!nome || !contato) {
-    alert("Por favor, preencha seu nome e um contato.");
+  const erroNome = document.getElementById("erroNome");
+  const erroTel = document.getElementById("erroTelefone");
+  const erroEmail = document.getElementById("erroEmail");
+
+  [nomeInput, telInput, emailInput].forEach(i => i.classList.remove("invalido"));
+  [erroNome, erroTel, erroEmail].forEach(e => e.textContent = "");
+
+  const nome = nomeInput.value.trim();
+  const telefone = telInput.value.replace(/\D/g, "");
+  const email = emailInput.value.trim() || null;
+
+  if (!nome) {
+    erroNome.textContent = "Informe seu nome.";
+    nomeInput.focus();
     return;
   }
 
-  const convidado = { nome, contato };
-  localStorage.setItem("convidado", JSON.stringify(convidado));
+  if (telefone.length < 10) {
+    erroTel.textContent = "Informe um telefone válido.";
+    telInput.focus();
+    return;
+  }
+
+  if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    erroEmail.textContent = "Email inválido.";
+    emailInput.focus();
+    return;
+  }
+
+  // 🔑 UPSERT no Supabase (telefone identifica o usuário)
+  const { data, error } = await supabase
+    .from("users")
+    .upsert(
+      { nome, telefone, email },
+      { onConflict: "telefone" }
+    )
+    .select()
+    .single();
+
+  if (error) {
+    console.error(error);
+    alert("Erro ao salvar usuário. Tente novamente.");
+    return;
+  }
+
+  // salva cache local (continua compatível)
+  localStorage.setItem("convidado", JSON.stringify({
+    id: data.id,
+    nome: data.nome,
+    telefone: data.telefone,
+    email: data.email
+  }));
 
   fecharModalLogin();
   atualizarAreaLogin();
 }
+
+["nomeConvidado", "telefoneConvidado", "emailConvidado"].forEach(id => {
+  const input = document.getElementById(id);
+  if (!input) return;
+
+  input.addEventListener("input", () => {
+    input.classList.remove("invalido");
+    const erro = document.getElementById(
+      "erro" + id.replace("Convidado", "")
+    );
+    if (erro) erro.textContent = "";
+  });
+});
+
+const telInput = document.getElementById("telefoneConvidado");
+
+if (telInput) {
+  telInput.addEventListener("input", () => {
+    telInput.value = telInput.value.replace(/\D/g, "");
+  });
+}
+
 
 function abrirModalLogin() {
   document.getElementById("loginModal").classList.add("active");
@@ -144,3 +214,12 @@ if (btnCarrinho) {
 window.usuarioLogado = function () {
   return !!localStorage.getItem("convidado");
 };
+// === EXPOR FUNÇÕES PARA O HTML ===
+window.abrirModalLogin = abrirModalLogin;
+window.fecharModalLogin = fecharModalLogin;
+window.salvarConvidado = salvarConvidado;
+window.acessarCarrinho = acessarCarrinho;
+window.comprarNoSite = comprarNoSite;
+window.toggleMenuUsuario = toggleMenuUsuario;
+window.trocarUsuario = trocarUsuario;
+window.logoutUsuario = logoutUsuario;

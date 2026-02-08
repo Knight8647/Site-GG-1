@@ -62,7 +62,7 @@ const gifts = [
     price: 151.91,
     image: "assets/Aspirador.jpg",
     pix: "",
-    link: "https://www.magazineluiza.com.br/aspirador-de-po-vertical-britania-filtro-hepa-1250w-bas1295p-preto/p/237879000/ep/apdv/?partner_id=64853&utm_source=pdp_desk&utm_medium=share",
+    link: "https://amzn.to/3LO7Fm2",
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const gifts = [
     price: 424.71,
     image: "assets/Purificador.jpg",
     pix: "",
-    link: "https://www.amazon.com.br/PURIFICADOR-REFRIGERADO-EQUILIBRIUM-GRAFITE-RANGE/dp/B0BYT8HSBJ/ref=sr_1_6?adgrpid=123411265661&dib=eyJ2IjoiMSJ9.RxDNuUNW_L8mcBHpA8xaStVnIi-MNEdom_liiTWOr-a5i33lfjQMUj1pgJ7w_lXZd8Pw3gfUULJFFBI4F1ODhBtzClIsYKarJcvcwLYzKQqg-UBMFzvd2OXL27HWajwWNQ43K6ERUxKNcD2-dEUz96hvMVFHjxbYZ-gElHRc6dXlI8nKNlo14CA_4gR5Ajtv2Tmb-kh226U_zxXHOfTNlZrjkIef5btlXxIousNnS4nmIpLyA_0GKAS-_TgPDpOV8oirEWIvAA7vHhtFcQ9YlUDK-rpiOJN-0K7Uvke_xAQ.iMbeb4oKIuHrXkixGKMsZv1TtdeChjGzjEsM-xY_Qdk&dib_tag=se&hvadid=595999548395&hvdev=c&hvlocphy=9102133&hvnetw=g&hvqmt=e&hvrand=7265428901904683445&hvtargid=kwd-323881866840&hydadcr=10637_13510007&keywords=purificador%2Bde%2Bagua%2Bgelada&mcid=bbe676adb5953401b07008193d9b3089&qid=1768688707&sr=8-6&ufe=app_do%3Aamzn1.fos.e05b01e0-91a7-477e-a514-15a32325a6d6&th=1",
+    link: "https://amzn.to/4a5PWjc",
   },
   {
     id: 8,
@@ -99,7 +99,7 @@ const gifts = [
     price: 2119,
     image: "assets/Ar.jpg",
     pix: "",
-    link: "https://www.mercadolivre.com.br/ar-condicionado-split-elgin-eco-inverter-ii-wi-fi-12000-btu-cor-branco/p/MLB55577033?pdp_filters=item_id%3AMLB6167046088#origin%3Dshare%26sid%3Dshare%26wid%3DMLB6167046088",
+    link: "https://mercadolivre.com/sec/2gD4LWj",
   } ,
   {
     id: 11,
@@ -108,7 +108,7 @@ const gifts = [
     price: 421.90,
     image: "assets/Cafeteira.jpg",
     pix: "",
-    link: "https://www.mercadolivre.com.br/nescafe-dolce-gusto-arno-genio-s-basic-branca-dgs1-cor-branco/p/MLB44389497?pdp_filters=item_id%3AMLB6105980776#origin%3Dshare%26sid%3Dshare%26wid%3DMLB6105980776",
+    link: "https://mercadolivre.com/sec/2989Zm8",
   },
   {
     id: 12,
@@ -238,7 +238,7 @@ const gifts = [
     price: 2043.46,
     image: "https://imgs.casasbahia.com.br/1570973665/1xg.jpg?imwidth=500",
     pix: "",
-    link: "https://www.casasbahia.com.br/conjunto-sala-de-jantar-mesa-valentina-4-cadeiras-fernanda-cimol/p/1570973665?utm_campaign=DescontoEspecial&utm_medium=BuscaOrganica&utm_source=Google",
+    link: "https://amzn.to/4bdGrQa",
   },
   {
     id: 26,
@@ -247,7 +247,7 @@ const gifts = [
     price: 120.30,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_993594-MLA95961200639_102025-F.webp",
     pix: "",
-    link: "https://www.mercadolivre.com.br/cortina-jacquard-300-x-250-para-salaquarto-admirare-cor-silver/p/MLB29598504?product_trigger_id=MLB29608869&picker=true&quantity=1",
+    link: "https://mercadolivre.com/sec/1gUUj5p",
   },
 
   //Vale Presente

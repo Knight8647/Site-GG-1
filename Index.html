@@ -3,10 +3,10 @@
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" href="assets/17042027.ico" type="image/x-icon">
+  <link rel="icon" href="assets/logonova1.ico" type="image/x-icon">
   <title>Lista de Casamento</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -32,7 +32,7 @@
   </section>
   <!-- GALERIA -->
   <section class="historia">
-    <h2 class="titulo-secao">Nossa história</h2>
+  
     <div class="carousel">
       <div class="carousel-track">
         <img src="assets/Fotogg1.jpg" alt="Foto nossa">
@@ -82,11 +82,11 @@
 
   <!-- SCRIPTS (ORDEM CORRETA) -->
     <script src="js/data.js"></script>
-    <script src="js/carrinho-core.js"></script>
+    <script type="module" src="js/carrinho-core.js"></script>
     <script src="js/gifts.js"></script>
     <script src="js/tabs.js"></script>
-    <script src="js/auth.js"></script>
-
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/auth.js"></script>
 
 <footer class="footer">
   <div class="footer-container">
@@ -114,26 +114,43 @@
 </footer>
 <div class="modal-login" id="loginModal">
   <div class="modal-box">
+
     <h2>Bem-vindo!</h2>
     <p>Antes de escolher os presentes, nos diga quem você é</p>
 
-    <input
-      type="text"
-      id="nomeConvidado"
-      placeholder="Seu nome"
-    />
+    <div class="login-box">
 
-    <input
-      type="text"
-      id="contatoConvidado"
-      placeholder="Email ou telefone"
-    />
+  <label for="nomeConvidado">Nome</label>
+  <input type="text" id="nomeConvidado" placeholder="Seu nome completo" />
+  <small class="erro" id="erroNome"></small>
+
+  <label for="telefoneConvidado">Telefone</label>
+  <input
+    type="tel"
+    id="telefoneConvidado"
+    placeholder="DDD + número"
+    inputmode="numeric"
+  />
+  <small class="erro" id="erroTelefone"></small>
+
+  <label for="emailConvidado">Email (opcional)</label>
+  <input
+    type="email"
+    id="emailConvidado"
+    placeholder="nome@email.com"
+  />
+  <small class="erro" id="erroEmail"></small>
+
+</div>
+
 
     <button class="btn" onclick="salvarConvidado()">
       Continuar
     </button>
+
   </div>
 </div>
+
 <div class="modal-presente" id="modalPresente">
   <div class="modal-presente-box">
 
