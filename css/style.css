@@ -128,8 +128,8 @@ body {
 .btn.outline {
   background: transparent;
   padding: 0.6rem;
-  border: 1px solid #1e293b;
-  color: #1e293b;
+  border: 1px solid #838791;
+  color: #838791;
 }
 
 .icon {
@@ -298,9 +298,12 @@ body {
 }
 
 .pix-qrcode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 280px;
   margin-top: -10px;
-  margin: 0 auto 24px;
+  margin: 0 auto 20px;
 
   background: #fff;
   padding: 12px;
@@ -1215,5 +1218,86 @@ button[disabled] {
 
   .modal-presente-info h3 {
     font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .btn-pix.mobile-fixed {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: calc(100% - 32px);
+    max-width: 420px;
+
+    z-index: 999;
+    box-shadow: 0 12px 30px rgba(37,99,235,0.45);
+  }
+
+  /* espaço pra não esconder conteúdo */
+  body {
+    padding-bottom: 90px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pix-page {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .pix-aside {
+    order: -1; /* 🔑 Pix vem primeiro */
+  }
+
+  .pix-resumo {
+    order: 2;
+    padding: 24px;
+  }
+}
+@media (min-width: 481px) {
+  .btn-pix.mobile-fixed {
+    position: static;
+    transform: none;
+    width: 100%;
+    box-shadow: none;
+  }
+}
+@media (max-width: 480px) {
+  .pix-card {
+    padding: 24px 18px;
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  #qrcode canvas {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+@media (max-width: 480px) {
+  .pix-chave {
+    font-size: 14px;
+    opacity: 0.85;
+  }
+}
+@media (max-width: 480px) {
+  .pix-card {
+    background: linear-gradient(160deg, #0f172a, #1e293b);
+  }
+}
+
+.pix-qrcode canvas,
+.pix-qrcode img {
+  width: 200px !important;
+  height: 200px !important;
+}
+@media (max-width: 480px) {
+  .pix-qrcode canvas,
+  .pix-qrcode img {
+    width: 180px !important;
+    height: 180px !important;
   }
 }

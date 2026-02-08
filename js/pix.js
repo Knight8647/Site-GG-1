@@ -1,3 +1,7 @@
+const PIX_CHAVE = "+5545988423562";
+const PIX_NOME = "GUILHERME AUGUSTO DE OLIV";
+const PIX_CIDADE = "SAO PAULO";
+
 function formatarBRL(valor) {
   return valor.toLocaleString("pt-BR", {
     style: "currency",
@@ -13,7 +17,7 @@ function renderCarrinho() {
 
   if (!lista || !totalEl) return;
 
-  const carrinho = obterCarrinho();
+const carrinho = obterItensSelecionados();
   lista.innerHTML = "";
   let total = 0;
 
@@ -40,12 +44,59 @@ function renderCarrinho() {
   totalEl.textContent = formatarBRL(total);
 }
 
+function gerarPayloadPix(valor) {
+  const valorFormatado = valor.toFixed(2);
+
+  function campo(id, valor) {
+    return id + String(valor.length).padStart(2, "0") + valor;
+  }
+
+  const payload =
+    campo("00", "01") +
+    campo("26",
+      campo("00", "br.gov.bcb.pix") +
+      campo("01", PIX_CHAVE)
+    ) +
+    campo("52", "0000") +
+    campo("53", "986") +
+    campo("54", valorFormatado) +
+    campo("58", "BR") +
+    campo("59", PIX_NOME.substring(0, 25)) +
+    campo("60", PIX_CIDADE.substring(0, 15)) +
+    campo("62", campo("05", "CASAMENTO"));
+
+  const crc = calcularCRC(payload + "6304");
+  return payload + "6304" + crc;
+}
+function calcularCRC(str) {
+  let crc = 0xFFFF;
+
+  for (let i = 0; i < str.length; i++) {
+    crc ^= str.charCodeAt(i) << 8;
+    for (let j = 0; j < 8; j++) {
+      crc = (crc & 0x8000) ? (crc << 1) ^ 0x1021 : crc << 1;
+    }
+  }
+
+  return (crc & 0xFFFF).toString(16).toUpperCase().padStart(4, "0");
+}
+
+
 window.removerItem = function (index) {
-  const carrinho = obterCarrinho();
-  carrinho.splice(index, 1);
+  const selecionados = obterItensSelecionados();
+  const itemRemovido = selecionados[index];
+
+  if (!itemRemovido) return;
+
+  const carrinho = obterCarrinho().filter(
+    item => item !== itemRemovido
+  );
+
   salvarCarrinho(carrinho);
   renderCarrinho();
+  renderResumoPix();
 };
+
 
 renderCarrinho();
 // === FINALIZAR COMPRA ===
@@ -53,7 +104,7 @@ function renderResumoPix() {
   const resumo = document.getElementById("resumoPix");
   if (!resumo) return;
 
-  const carrinho = obterCarrinho();
+  const carrinho = obterItensSelecionados();
   let total = 0;
 
   resumo.innerHTML = "<h2>Resumo do presente</h2>";
@@ -67,7 +118,7 @@ function renderResumoPix() {
     ${formatarBRL(item.preco)}
 
   </p>
-`;
+ `;
 
   });
 
@@ -76,6 +127,30 @@ function renderResumoPix() {
     <h3>Total: ${formatarBRL(total)}</h3>
 
   `;
+  const btnPix = document.querySelector(".btn-pix.mobile-fixed");
+if (btnPix) {
+  btnPix.textContent = `Já fiz o pagamento • ${formatarBRL(total)}`;
+}
+const payloadPix = gerarPayloadPix(total);
+
+// texto copiável
+document.getElementById("pixKey").innerText = payloadPix;
+
+// QR Code
+const qrContainer = document.getElementById("qrcode");
+qrContainer.innerHTML = "";
+
+if (window.QRCode) {
+  new QRCode(qrContainer, {
+    text: payloadPix,
+    width: 220,
+    height: 220
+  });
+} else {
+  console.error("QRCode lib não carregada");
+}
+
+
 }
 
 renderResumoPix();
@@ -99,16 +174,18 @@ function copiarPix() {
 }
 
 function abrirModal() {
-  const nome = obterNomeConvidado();
-
+  document.body.style.overflow = "hidden";
   document.getElementById("confirmModal").style.display = "flex";
 }
 
 function fecharModal() {
+  document.body.style.overflow = "";
   document.getElementById("confirmModal").style.display = "none";
 }
 
+
 function finalizarPagamento() {
+  const selecionados = obterItensSelecionados();
   const carrinho = obterCarrinho();
   const dados = JSON.parse(localStorage.getItem("presentesDados")) || [];
     const mensagem = document.getElementById("mensagemNoivos")?.value || "";
@@ -118,7 +195,8 @@ function finalizarPagamento() {
   carrinho.forEach(item => {
     dados.push(item.nome);
   });
-
+  const restante = carrinho.filter(item => !item.selected);
+  salvarCarrinho(restante);
   localStorage.setItem("presentesDados", JSON.stringify(dados));
   localStorage.removeItem("carrinho");
 

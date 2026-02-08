@@ -1,5 +1,9 @@
 const CART_KEY = "cartItems";
 
+function obterItensSelecionados() {
+  return obterCarrinho().filter(item => item.selected);
+}
+
 function obterCarrinho() {
   return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }

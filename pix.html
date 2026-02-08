@@ -25,9 +25,9 @@
     <aside class="pix-aside">
       <div class="pix-card">
 
+       <div class="pix-qrcode">
         <div id="qrcode"></div>
-
-        <p class="pix-label"><img src="assets/qrcodePix.fw.png" alt="QR Code Pix"></p>
+        </div>
 
         <p class="pix-chave" id="pixKey">
           00020126580014br.gov.bcb.pix0114+55459884235620218Lista de Casamento5204000053039865802BR5925GUILHERME AUGUSTO DE OLIV6009Sao Paulo62260522GuilhermeAugustodeOliv630455BE
@@ -37,7 +37,7 @@
           Copiar chave Pix
         </button>
 
-        <button class="btn btn-pix" onclick="abrirModal()">
+        <button class="btn btn-pix mobile-fixed" onclick="abrirModal()">
           Já fiz o pagamento
         </button>
 
@@ -63,6 +63,7 @@
     </div>
   </div>
 
+<script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
 <script src="js/carrinho-core.js"></script>
 <script src="js/pix-protect.js"></script>
 <script src="js/pix.js"></script>
