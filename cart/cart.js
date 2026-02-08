@@ -19,8 +19,9 @@ const summaryTotalEl = document.querySelector(".cart-summary-line strong");
 const footerBtn = document.querySelector(".cart-footer .cart-btn-primary");
 const summaryBtn = document.querySelector(".cart-summary .cart-btn-primary");
 
-const selectAllCheckboxes = document.querySelectorAll(".select-all");
-
+const selectAllCheckboxes = document.querySelectorAll(
+  "#selectAllDesktop, #selectAllMobile"
+);
 // ===============================
 // HELPERS
 // ===============================
@@ -30,10 +31,6 @@ function formatBRL(value) {
     currency: "BRL"
   });
 }
-
-// ===============================
-// RENDER
-// ===============================
 function renderCart() {
   
   listEl.innerHTML = "";
@@ -146,22 +143,31 @@ selectAllCheckboxes.forEach(cb => {
   cb.addEventListener("change", () => {
     const checked = cb.checked;
 
-    cartItems.forEach(item => {
+    cartItems.forEach((item, index) => {
       item.selected = checked;
+
+      const itemCheckbox = document.querySelector(
+        `.item-checkbox[data-index="${index}"]`
+      );
+      if (itemCheckbox) itemCheckbox.checked = checked;
     });
 
     salvarCarrinho(cartItems);
-    renderCart();
+    updateTotals();
+    syncSelectAll();
   });
 });
+
 
 // ===============================
 // FINALIZAR (PIX)
 // ===============================
 function finalizarCompra() {
-  if (cartItems.filter(i => i.selected).length === 0) return;
-  window.location.href = "pix.html";
-}
+  if (cartItems.filter(i => i.selected).length === 0){ return;
+  }
+  else { 
+    window.location.href = "/pix.html";
+}}
 
 if (footerBtn) footerBtn.addEventListener("click", finalizarCompra);
 if (summaryBtn) summaryBtn.addEventListener("click", finalizarCompra);
@@ -171,3 +177,6 @@ if (summaryBtn) summaryBtn.addEventListener("click", finalizarCompra);
 // ===============================
 renderCart();
 
+function irParaPagamentoPix() {
+  window.location.href = "/pix.html";
+}

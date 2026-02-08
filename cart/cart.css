@@ -47,7 +47,7 @@ body {
 .cart-item {
   display: grid;
   grid-template-columns: 20px 44px 1fr 24px;
-  gap: 10px;
+  gap: 12px;
   align-items: center;
 
   background: #fff;
@@ -60,16 +60,16 @@ body {
 }
 
 .cart-item input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 18px;
   cursor: pointer;
 }
 
 .cart-item-img {
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 10px;
   background: #f2f2f2;
 }
 
@@ -80,14 +80,14 @@ body {
 }
 
 .cart-item-name {
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 17px;
+  font-weight: 450;
   color: #111;
-  line-height: 1.1;
+  line-height: 1.5;
 }
 
 .cart-item-price {
-  font-size: 12.5px;
+  font-size: 15.5px;
   font-weight: 700;
   color: #1a9e55;
 }
@@ -95,7 +95,7 @@ body {
 .cart-remove {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 19px;
   cursor: pointer;
   color: #999;
 }
@@ -124,15 +124,15 @@ body {
   background: #ffffff;
   border-top: 1px solid #e5e7eb;
 
-  padding: 10px 12px;
+  padding: 40px 25px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .cart-footer-total {
-  font-size: 14px;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 650;
   text-align: right;
 }
 
@@ -146,7 +146,7 @@ body {
   background: #2563eb;
   color: #ffffff;
 
-  font-size: 14px;
+  font-size: 20px;
   font-weight: 600;
   cursor: pointer;
 }
@@ -210,7 +210,8 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 20px;
+  font-weight: 450;
 }
 
 .desktop-only {
@@ -243,7 +244,7 @@ body {
   background: #fff;
   border-radius: 14px;
   padding: 14px;
-  margin: 12px 0;
+  margin: 15px 0;
 
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
@@ -260,8 +261,8 @@ body {
 }
 
 .select-all-content input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 /* Esconde o card "Selecionar todos" no mobile */

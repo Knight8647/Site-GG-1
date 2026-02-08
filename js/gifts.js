@@ -90,7 +90,7 @@ document.getElementById("modalBtnPix").onclick = () => {
  adicionarAoCarrinho(
   gift.name,
   gift.price,
-gift.image
+  gift.image
 );
 
 atualizarBadgeCarrinho();

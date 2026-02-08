@@ -1,8 +1,15 @@
+function formatarBRL(valor) {
+  return valor.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+  });
+}
 
 
 function renderCarrinho() {
   const lista = document.getElementById("listaCarrinho");
   const totalEl = document.getElementById("totalCarrinho");
+
 
   if (!lista || !totalEl) return;
 
@@ -21,7 +28,7 @@ function renderCarrinho() {
 
       <div class="info-carrinho">
         <p>${item.nome}</p>
-        <strong>R$ ${item.preco.toFixed(2)}</strong>
+        <strong>${formatarBRL(item.preco)}</strong>
       </div>
 
       <button onclick="removerItem(${index})">✕</button>
@@ -30,7 +37,7 @@ function renderCarrinho() {
     lista.appendChild(div);
   });
 
-  totalEl.textContent = total.toFixed(2);
+  totalEl.textContent = formatarBRL(total);
 }
 
 window.removerItem = function (index) {
@@ -57,7 +64,8 @@ function renderResumoPix() {
     resumo.innerHTML += `
     <p>
      <strong>${item.nome}</strong><br>
-    R$ ${item.preco.toFixed(2)}
+    ${formatarBRL(item.preco)}
+
   </p>
 `;
 
@@ -65,7 +73,8 @@ function renderResumoPix() {
 
   resumo.innerHTML += `
     <hr>
-    <h3>Total: R$ ${total.toFixed(2)}</h3>
+    <h3>Total: ${formatarBRL(total)}</h3>
+
   `;
 }
 

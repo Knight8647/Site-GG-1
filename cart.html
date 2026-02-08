@@ -2,11 +2,12 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <link rel="icon" href="assets/17042027.ico" type="image/x-icon">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Carrinho</title>
 
   <!-- CSS ISOLADO -->
-  <link rel="stylesheet" href="cart.css">
+  <link rel="stylesheet" href="cart/cart.css">
 </head>
 <body>
 
@@ -41,7 +42,7 @@
         <strong>R$ 0,00</strong>
       </div>
 
-      <button class="cart-btn-primary">
+      <button class="cart-btn-primary" onclick="irParaPagamentoPix()">
         Finalizar via Pix
       </button>
     </aside>
@@ -68,7 +69,7 @@
 
 
 </main>
-<script src="../js/carrinho-core.js"></script>
-<script src="../cart/cart.js"></script>
+<script src="js/carrinho-core.js"></script>
+<script src="cart/cart.js"></script>
 </body>
 </html>
