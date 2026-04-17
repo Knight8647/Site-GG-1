@@ -1,3 +1,6 @@
+if (!localStorage.getItem("convidado")) {
+  window.location.href = "/";
+}
 const lista = document.getElementById("carrinho-lista");
 const totalEl = document.getElementById("total");
 

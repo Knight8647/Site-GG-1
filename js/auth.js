@@ -213,6 +213,7 @@ if (btnCarrinho) {
 }
 window.usuarioLogado = function () {
   return !!localStorage.getItem("convidado");
+    return !!user;
 };
 // === EXPOR FUNÇÕES PARA O HTML ===
 window.abrirModalLogin = abrirModalLogin;

@@ -1,4 +1,6 @@
-
+if (!localStorage.getItem("convidado")) {
+  window.location.href = "/";
+}
 import "../js/carrinho-core.js";
 let cartItems = obterCarrinho();
 cartItems = cartItems.map(item => ({
