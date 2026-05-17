@@ -1,6 +1,6 @@
 import { supabase } from "./supabase.js";
 
-const CART_KEY = "cartItems";
+const CART_KEY = "carrinho";
 function obterUsuarioId() {
   const convidado = JSON.parse(localStorage.getItem("convidado"));
   return convidado?.id || null;
@@ -84,4 +84,5 @@ window.removerDoCarrinho = removerDoCarrinho;
 window.atualizarBadgeCarrinho = atualizarBadgeCarrinho;
 window.obterCarrinho = obterCarrinho;
 window.obterItensSelecionados = obterItensSelecionados;
+window.salvarCarrinho = salvarCarrinho;
 atualizarBadgeCarrinho();

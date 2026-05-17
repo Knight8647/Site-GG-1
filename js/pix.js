@@ -1,4 +1,5 @@
 import "./carrinho-core.js";
+import { supabase } from "./supabase.js";
 const itensSelecionados = obterItensSelecionados();
 if (!itensSelecionados.length) {
   window.location.href = "/cart.html";
@@ -199,29 +200,115 @@ function fecharModal() {
 }
 
 
-function finalizarPagamento() {
+async function finalizarPagamento() {
+
   const selecionados = obterItensSelecionados();
-  const carrinhoCompleto = obterCarrinho();
+
+  const convidado =
+    JSON.parse(localStorage.getItem("convidado"));
+
+  if (!convidado?.id) {
+    alert("Usuário não encontrado.");
+    return;
+  }
 
   if (!selecionados.length) {
     alert("Nenhum item selecionado.");
     return;
   }
 
-  const mensagem = document.getElementById("mensagemNoivos")?.value || "";
-  localStorage.setItem("mensagemNoivos", mensagem);
+  // =========================
+  // mensagem
+  // =========================
 
-  const dados = JSON.parse(localStorage.getItem("presentesDados")) || [];
+  const mensagem =
+    document.getElementById("mensagemNoivos")?.value || "";
 
-  selecionados.forEach(item => {
-    dados.push(item.nome);
-  });
+  // =========================
+  // total
+  // =========================
 
-  // mantém APENAS os NÃO pagos
-  const restante = carrinhoCompleto.filter(item => !item.selected);
+  const total = selecionados.reduce(
+    (acc, item) => acc + item.preco,
+    0
+  );
+
+  // =========================
+  // cria pedido
+  // =========================
+
+  const { data: pedido, error: pedidoError } =
+    await supabase
+      .from("pix_orders")
+      .insert({
+        user_id: convidado.id,
+        total,
+        message: mensagem,
+        status: "pending"
+      })
+      .select()
+      .single();
+
+  if (pedidoError) {
+    console.error(pedidoError);
+    alert("Erro ao criar pedido.");
+    return;
+  }
+
+  // =========================
+  // salva itens do pedido
+  // =========================
+console.log(selecionados);
+  const itens = selecionados.map(item => ({
+    order_id: pedido.id,
+    gift_id: item.giftId,
+    price: item.preco
+  }));
+
+  const { error: itensError } =
+    await supabase
+      .from("pix_order_items")
+      .insert(itens);
+
+  if (itensError) {
+    console.error(itensError);
+    alert("Erro ao salvar itens.");
+    return;
+  }
+
+  // =========================
+  // remove do carrinho local
+  // =========================
+
+  const carrinhoAtual = obterCarrinho();
+
+  const restante = carrinhoAtual.filter(item =>
+    !selecionados.some(sel => sel.id === item.id)
+  );
+
   salvarCarrinho(restante);
 
-  localStorage.setItem("presentesDados", JSON.stringify(dados));
+  // =========================
+  // remove do carrinho supabase
+  // =========================
+
+  for (const item of selecionados) {
+
+    await supabase
+      .from("cart_items")
+      .delete()
+      .eq("user_id", convidado.id)
+      .eq("gift_id", item.giftId);
+
+  }
+
+  // =========================
+  // finalização
+  // =========================
+
+  fecharModal();
+
+  alert("Pagamento registrado!");
 
   window.location.href = "index.html";
 }
@@ -239,3 +326,7 @@ if (inputNome) {
   });
 }
 
+window.abrirModal = abrirModal;
+window.fecharModal = fecharModal;
+window.finalizarPagamento = finalizarPagamento;
+window.copiarPix = copiarPix;
