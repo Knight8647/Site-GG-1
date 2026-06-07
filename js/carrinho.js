@@ -100,9 +100,17 @@ function atualizarTotalSelecionado() {
 }
 
 document.addEventListener("change", (e) => {
-  if (e.target.classList.contains("item-check")) {
-    atualizarTotalSelecionado();
-  }
+if (e.target.classList.contains("item-check")) {
+
+  const carrinho = obterCarrinho();
+  const index = Number(e.target.dataset.index);
+
+  carrinho[index].selected = e.target.checked;
+
+  salvarCarrinho(carrinho);
+
+  atualizarTotalSelecionado();
+}
 
   if (e.target.id === "checkTodos") {
     document.querySelectorAll(".item-check").forEach(chk => {
