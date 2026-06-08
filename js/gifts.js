@@ -6,15 +6,38 @@ function obterComprasViaSite() {
   return JSON.parse(localStorage.getItem("comprasViaSite")) || [];
 }
 
-function salvarCompraViaSite(nomePresente) {
+async function salvarCompraViaSite(giftId, nomePresente) {
+  
   const compras = obterComprasViaSite();
 
   if (!compras.includes(nomePresente)) {
     compras.push(nomePresente);
-    localStorage.setItem("comprasViaSite", JSON.stringify(compras));
+
+    localStorage.setItem(
+      "comprasViaSite",
+      JSON.stringify(compras)
+    );
+  }
+
+  const convidado =
+    JSON.parse(localStorage.getItem("convidado"));
+
+  if (!convidado?.id) {
+    return;
+  }
+
+  const { error } = await window.supabase
+    .from("external_purchases")
+    .insert({
+      user_id: convidado.id,
+      gift_id: giftId
+    });
+    console.log("RESULTADO:", error);
+  if (error) {
+    console.error(error);
+    alert("Erro ao registrar compra.");
   }
 }
-
 
 
 function renderGifts(category) {
@@ -82,7 +105,7 @@ if (comprasViaSite.includes(gift.name)) {
     `R$ ${gift.price.toLocaleString("pt-BR", { minimumFractionDigits: 2 })}`;
 
 document.getElementById("modalBtnPix").onclick = () => {
-  if (typeof adicionarAoCarrinho !== "function") {
+    if (typeof adicionarAoCarrinho !== "function") {
     alert("Erro ao adicionar ao carrinho.");
     return;
   }
@@ -111,8 +134,10 @@ atualizarBadgeCarrinho();
     "Você deseja confirmar que comprou este presente pelo site?"
   );
   if (confirmar) {
-    salvarCompraViaSite(gift.name);
-
+     salvarCompraViaSite(
+      gift.id,
+      gift.name
+    );
     // atualiza a lista de presentes
     renderGifts(categoriaAtiva);
 

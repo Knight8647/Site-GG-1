@@ -33,7 +33,12 @@ if (carrinho.length === 0) {
     div.className = "carrinho-item";
 
 div.innerHTML = `
-  <input type="checkbox" class="item-check" data-index="${index}" checked>
+    <input
+      type="checkbox"
+      class="item-check"
+      data-index="${index}"
+      ${item.selected ? "checked" : ""}
+    />
 
   <img src="${item.imagem}" class="img-carrinho">
 
@@ -100,10 +105,16 @@ function atualizarTotalSelecionado() {
 }
 
 document.addEventListener("change", (e) => {
-if (e.target.classList.contains("item-check")) {
+  console.log("CHANGE DISPAROU", e.target);
+
+  if (e.target.classList.contains("item-check")) {
+
 
   const carrinho = obterCarrinho();
   const index = Number(e.target.dataset.index);
+
+  console.log(index);
+console.log(e.target.checked);
 
   carrinho[index].selected = e.target.checked;
 

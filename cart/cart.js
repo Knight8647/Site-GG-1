@@ -80,11 +80,15 @@ function bindItemEvents() {
   // checkbox individual
   document.querySelectorAll(".item-checkbox").forEach(cb => {
     cb.addEventListener("change", () => {
-      const index = Number(cb.dataset.index);
-      cartItems[index].selected = cb.checked;
-      updateTotals();
-      syncSelectAll();
-    });
+  const index = Number(cb.dataset.index);
+
+  cartItems[index].selected = cb.checked;
+
+  salvarCarrinho(cartItems);
+
+  updateTotals();
+  syncSelectAll();
+});
   });
 
   // remover item
@@ -153,8 +157,9 @@ selectAllCheckboxes.forEach(cb => {
         `.item-checkbox[data-index="${index}"]`
       );
       if (itemCheckbox) itemCheckbox.checked = checked;
+      
     });
-
+    salvarCarrinho(cartItems);
     updateTotals();
     syncSelectAll();
   });
