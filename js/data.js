@@ -584,7 +584,7 @@ allowSitePurchase: true,
     category: "Noivos",
     name: "Capacete contra o rolo de macarrão",
     price: 150,
-    image: 'assets/capacete.jpg',
+    image: 'assets/capacete.jpeg',
     pix: "",
     allowSitePurchase: false
   }
