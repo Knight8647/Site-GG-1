@@ -16,7 +16,7 @@ const gifts = [
     name: "Geladeira/Refrigerador Brastemp Frost Free Duplex Prata 463L BRM55FK",
     price: 3699,
     image: 'assets/Geladeira.jpg',
-    pix: "PIX_CODIGO_AQUI",
+    allowSitePurchase: true,
     link: "https://www.magazineluiza.com.br/geladeira-refrigerador-brastemp-frost-free-duplex-prata-463l-brm55fk/p/238402400/ed/refr/?partner_id=64853&utm_source=pdp_desk&utm_medium=share"
   },
   {
@@ -25,7 +25,7 @@ const gifts = [
     name: "Micro-Ondas Electrolux Prata com Painel Integrado 31L (MI41S)",
     price: 749,
   image: "assets/Microondas.jpg",
-    pix: "PIX_CODIGO_AQUI",
+    allowSitePurchase: true,
     link: "https://site.fastshop.com.br/micro-ondas-electrolux-prata-com-painel-integrado-31l--mi41s--exmi41s_prd/p?idsku=12601&utm_source=bing&utm_medium=cpc&utm_campaign=%5Bli%5D_lb_%5Bst%5D_comercial_%5Bch%5D_1p_%5Bpl%5D_bing_%5Bty%5D_shop&utm_term=&utm_placement=o&msclkid=8b66da23f62a1d0c1c1db348f52b5466"
   },
   {
@@ -34,7 +34,7 @@ const gifts = [
     name: "Fogão 4 bocas Electrolux Prata Efficient com Mesa de Vidro, Tripla Chama e VaporBake",
     price: 1699,
     image: "assets/Fogão.jpg",
-    pix: "PIX_CODIGO_AQUI",
+    allowSitePurchase: true,
     link: "https://loja.electrolux.com.br/fogao-4-bocas-electrolux-prata-efficient-com-mesa-de-vidro-perfectcook-e-vaporbake--fe4gs-/p?idsku=310120614&msclkid=8715e428882110340e338d438b8d31dc&utm_source=bing&utm_medium=cpc&utm_campaign=%5BVitrio%5D%20PLA%20%7C%20USC%20%7C%20Top%20Produtos&utm_term=2333713430298929&utm_content=Top%20Produtos  "
   },
   {
@@ -43,7 +43,7 @@ const gifts = [
     name: "Samsung Lava e Seca Digital Inverter Ecobubble™ WD10M Branca 10.1kg 220V",
     price: 3299,
     image:"assets/Maquina.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://a.co/d/1HJRsDg",
   },
   {
@@ -52,7 +52,7 @@ const gifts = [
     name: "Smart TV QLED 4K Samsung 55'' Q60B",
     price: 1597,
     image: "assets/Tv.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.magazineluiza.com.br/smart-tv-43-philips-full-hd-dled-43pfg6918-78-60hz-google-tv-quad-core-google-assistente-3-hdm/p/240247300/et/elit/?partner_id=64853&utm_source=pdp_desk&utm_medium=share"
   },
   {
@@ -61,7 +61,7 @@ const gifts = [
     name: "Aspirador de Pó Vertical Britânia Filtro HEPA 1250W BAS1295P Preto",
     price: 151.91,
     image: "assets/Aspirador.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://amzn.to/3LO7Fm2",
   },
   {
@@ -70,7 +70,7 @@ const gifts = [
     name: "Purificador Refrigerado New E-DUE Equilibrium Grafite Full Range",
     price: 424.71,
     image: "assets/Purificador.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://amzn.to/4a5PWjc",
   },
   {
@@ -79,7 +79,7 @@ const gifts = [
     name: "Ferro de Passar Seco e vapor base ceramica vapor vertical extra alta capacidade 1500W ESI50 127v", 
     price: 186,
     image: "assets/Ferro.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.amazon.com.br/Electrolux-antiaderente-ceramica-Glissium-capacidade/dp/B0CCJXMYSR/ref=sr_1_16?crid=SE5IBE62Z72X&dib=eyJ2IjoiMSJ9.xpGHdmyIOrx-5aDhCtCX34jCQQyp0lhblu_R9NRAzSaL1ZZvu7yxr4xjVeLrANtAMKH5bIZFdl7sM-KYoAt7EXSFWTQB3D7Ba0ZmEsIqyW1tBdBqa8zCSt-5DLD2wgcxPkULx0s2Kfboh5n5n3xIi2FFtNrLLXB-lQVNIlQ3BdmtFPhE8JS6U2IvkKqZeNjRokIieoNo58dwsdwgzqLbRX8pIUYs2TPGF9Bvj618Ki48W0j9g_RO-SDlIpcUmNwGgVt97cFTjHHTib9Q4QHohXkSyGYgLU_GQ7R1F0mXF4Q.JLtwNcO_iQ7lFHsz2RnaPysPlE_sLFFYw2IcAHVGg6E&dib_tag=se&keywords=ferro%2Bde%2Bpassar%2Broupa%2Bvapor%2Bceramica&qid=1768689242&sprefix=ferro%2Bde%2Bpassar%2Broupa%2Bvapor%2B%2Caps%2C225&sr=8-16&ufe=app_do%3Aamzn1.fos.db68964d-7c0e-4bb2-a95c-e5cb9e32eb12&th=1",
   } ,
   { 
@@ -88,7 +88,7 @@ const gifts = [
     name: "MONDIAL Ventilador de Mesa 110V, 30cm, 6 pás, Super Power - VSP-30-B",
     price: 119.90,
     image: "assets/Ventilador.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://a.co/d/dYAYOXS",
 
   },
@@ -98,7 +98,7 @@ const gifts = [
     name: "Ar Condicionado Split Elgin Eco Inverter Ii Wi-fi 12000 Btu/ Cor Branco",
     price: 2119,
     image: "assets/Ar.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://mercadolivre.com/sec/2gD4LWj",
   } ,
   {
@@ -107,7 +107,7 @@ const gifts = [
     name: "Nescafé Dolce Gusto Arno Genio S Basic Branca Dgs1 Cor Branco",
     price: 421.90,
     image: "assets/Cafeteira.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://mercadolivre.com/sec/2989Zm8",
   },
   {
@@ -116,7 +116,7 @@ const gifts = [
     name: "Sanduicheira Fast Grill e Sandwich Mondial S-12 750W - Preta - 110V",
     price: 89,
     image: "assets/Sanduiche.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.casasbahia.com.br/sanduicheira-fast-grill-e-sandwich-mondial-s-12-750w-preta/p/3230329?utm_medium=cpc&utm_source=GP_PLA&IdSku=3230329&idLojista=10037&tipoLojista=1P&gclsrc=aw.ds&&utm_campaign=cb_b2c_gg_shopping_core_elpo_geral&gad_source=1&gad_campaignid=22439146548&gbraid=0AAAAADtAamgdsRmjDDltTfaRZHbfxQohR&gclid=Cj0KCQiAg63LBhDtARIsAJygHZ6CM4DlpBwzqEGNmmxGzaKPyEml5OIGCWF8lUHliiMy7RGFp8O1hmQaAgNyEALw_wcB",
   },
   {
@@ -125,7 +125,7 @@ const gifts = [
     name: "Liquidificador Mondial L-99 com Filtro - Copo Cristal, 3 Velocidades + Pulsar, 550W, Branco",
     price: 94.05,
     image: "assets/Liquidificador.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.magazineluiza.com.br/liquidificador-mondial-l-99-com-filtro-copo-cristal-3-velocidades-pulsar-550w-branco/p/fj8471j53d/ep/liqu/?seller_id=magazineluiza",
   },
   // Cozinha
@@ -136,7 +136,7 @@ const gifts = [
     name: "Conjunto De Panelas Sartin Champ 7 Peças Cerâmica Mimo Stylee",
     price: 399.90,  
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_621492-MLA99502976516_112025-F.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/conjunto-de-panelas-sartin-champ-7-pecas-cermica-mimo-style/p/MLB34508026#reviews",
   } ,
   {
@@ -145,7 +145,7 @@ const gifts = [
     name: "Panela de Pressão 4,5L Panelux Magnific em Alumínio com Antiaderente PTFE - Grafite",
     price: 149.90,
     image: "https://imgs.casasbahia.com.br/55061374/1g.jpg?imwidth=500",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.casasbahia.com.br/panela-de-pressao-45l-panelux-magnific-em-aluminio-com-antiaderente-ptfe-grafite/p/55061374?utm_campaign=DescontoEspecial&utm_medium=BuscaOrganica&utm_source=Google",
   } ,
   {
@@ -154,7 +154,7 @@ const gifts = [
     name: "Kit 3 Assadeiras Antiaderente Pão Bolo Pudim Tortas - Emcasatem",
     price: 54.90,
     image: "https://m.media-amazon.com/images/I/51dFlo2mSXL._AC_SL1200_.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://a.co/d/08D6T5zv",
   },
   {
@@ -163,7 +163,7 @@ const gifts = [
     name: "Potes Herméticos Electrolux de Plástico Branco Retangular com 10 Unidades",
     price: 77.62,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_670771-MLA103614508734_012026-F.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/potes-hermeticos-electrolux-de-plastico-branco-retangular-com-10-unidades/p/MLB23194311#polycard_client=search-desktop&search_layout=grid&position=7&type=product&tracking_id=37b8860d-3697-401b-a0a7-ee4e9ad17426&wi",
   },
   {
@@ -172,7 +172,7 @@ const gifts = [
     name: "Jarra Diamond De Vidro Com Fio De Ouro Dourado 1,14L Lyor",
     price: 56,
     image: "assets/Jarra.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.magazineluiza.com.br/jarra-diamond-de-vidro-com-fio-de-ouro-dourado-114l-lyor/p/kfj5b2dh88/ud/udjr/?seller_id=oriva",
   },
   {
@@ -181,7 +181,7 @@ const gifts = [
     name: "Conjunto 12 Peças Copo Estela Vidro 460ml - Nadir",
     price: 44.90,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_613110-MLA99138271779_112025-F.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/conjunto-12-pecas-copo-estela-vidro-460ml-nadir/p/MLB60377626#polycard_client=search-desktop&search_layout=grid&position=29&type=product&tracking_id=87a944cc-00be-4c52-9461-353f1e096bcd&wid=MLB5893439186&sid=search",
   },
   //Banheiro
@@ -191,7 +191,7 @@ const gifts = [
     name: "Jogo Toalhas Groh Marselha 100% Algodão Kit 4 Banho e Rosto",
     price: 58.49,
     image: "assets/Toalha.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/jogo-toalhas-groh-marselha-100-algodo-kit-4-banho-e-rosto/p/MLB29353656#reviews",
   }, 
   {
@@ -200,7 +200,7 @@ const gifts = [
     name: "Kit 04 Tapete Banheiro 38x58 Antiderrapante Bolinha Macarrão lavabo casa felpudo box absorvente água",
     price: 58.90,
     image: "assets/Tapete.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.magazineluiza.com.br/kit-04-tapete-banheiro-38x58-antiderrapante-bolinha-macarrao-lavabo-casa-felpudo-box-absorvente-agua-marias-enxoval/p/bhkb1ghf55/cm/ctap/",
   },
   {
@@ -209,7 +209,7 @@ const gifts = [
     name: "Kit Lavabo com Bandeja – Kit Banheiro Saboneteira e Conjunto para Banheiro",
     price: 54.90,
     image: "assets/Saboneteira.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.amazon.com.br/Kit-Lavabo-com-Bandeja-Saboneteira/dp/B0DSGPTR1N/ref=asc_df_B0DSGPTR1N?tag=brbngshpdsk-20&linkCode=df0&hvadid=77447066850023&hvnetw=o&hvqmt=e&hvbmt=be&hvdev=c&hvlocint=&hvlocphy=147100&hvtargid=pla-4581046495425142&msclkid=840c431314a6167912872a7f417c370c&th=1 ",
   },
   {    
@@ -218,7 +218,7 @@ const gifts = [
     name: "Kit 2 Porta Shampoo Reto De Vidro Quadrado Luxo Quadrus",
     price: 57.99,
     image: "assets/Porta Shampoo.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/kit-2-porta-shampoo-reto-de-vidro-quadrado-luxo-quadrus/p/MLB53633882#reviews",
   },
   //Sala de Estar
@@ -228,7 +228,7 @@ const gifts = [
     name: "Sofá Cama Retrátil E Reclinável Aurora Gelo Chwt Cor Gelo",
     price: 2378.93,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_799069-MLA96155968879_102025-F.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/sofa-cama-retratil-e-reclinavel-aurora-gelo-chwt-cor-gelo/p/MLB38227886?product_trigger_id=MLB37998612&picker=true&quantity=1",
   },
   {
@@ -237,7 +237,7 @@ const gifts = [
     name: "Conjunto Sala de Jantar Mesa Valentina 4 cadeiras Fernanda Cimol - Off White",
     price: 2043.46,
     image: "https://imgs.casasbahia.com.br/1570973665/1xg.jpg?imwidth=500",
-    pix: "",
+allowSitePurchase: true,
     link: "https://amzn.to/4bdGrQa",
   },
   {
@@ -246,7 +246,7 @@ const gifts = [
     name: "Cortina Jacquard 3,00 X 2,50 Para Sala/quarto | Admirare Cor Silver",
     price: 120.30,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_993594-MLA95961200639_102025-F.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://mercadolivre.com/sec/1gUUj5p",
   },
 
@@ -256,8 +256,9 @@ const gifts = [
     category: "Noivos",
     name: "Vale Presente R$ 200,00",
     price: 200,
-    image: "",
+    image: "assets/200.jpg",
     pix: "",
+      allowSitePurchase: false
 
   },
   {
@@ -265,8 +266,9 @@ const gifts = [
     category: "Noivos",
     name: "Vale Presente R$ 500,00",
     price: 500,
-    image: "",
+    image: "assets/500.jpg",
     pix: "",
+      allowSitePurchase: false
 
   }, 
   {
@@ -274,40 +276,50 @@ const gifts = [
     category: "Noivos",
     name: "Vale Presente R$ 1.000,00",
     price: 1000,
-    image: "",
+    image: "assets/1000.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   {
     id: 33,
     category: "Noivos",
     name: "Vale Presente R$ 1.500,00",
     price: 1500,
-    image: "",
+    image: "assets/1500.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   {
     id: 34,
     category: "Noivos",
     name: "Vale Presente R$ 2.000,00",
     price: 2000,
-    image: "",
+    image: "assets/2000.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   {
     id: 35,
     category: "Noivos",
     name: "Vale Presente R$ 2.500,00",
     price: 2500,
-    image: "",
+    image: "assets/2500.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   {
     id: 36,
     category: "Noivos",
     name: "Vale Presente R$ 3.000,00",
     price: 3000,
-    image: "",
+    image: "assets/3000.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   //Quarto
   {
@@ -316,7 +328,7 @@ const gifts = [
     name: "Cortinas Sala Jacquard Tecido Grosso Semi Blackout 2,80x1,80",
     price: 69.90,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_759066-MLB80621453676_112024-F-cortinas-sala-jacquard-tecido-grosso-semi-blackout-280x180.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://produto.mercadolivre.com.br/MLB-3226454142-cortinas-sala-jacquard-tecido-grosso-semi-blackout-280x180-_JM?attributes=COLOR_SECONDARY_COLOR%3AQ29ydGluYSBCcmFuY2E%3D&picker=true&searchVariation=176774909214&quantity=1#reviews",
   },
   {
@@ -325,7 +337,7 @@ const gifts = [
     name: "Cesto P/ Roupa Suja RATTAN 50 Litros Lavandeira Organizador",
     price: 63.90,
     image: "https://down-br.img.susercontent.com/file/sg-11134201-825ba-mge24h3sohs9b3.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://shopee.com.br/Cesto-P-Roupa-Suja-RATTAN-50-Litros-Lavandeira-Organizador-i.389688212.23999123376?extraParams=%7B%22display_model_id%22%3A159788643989%2C%22model_selection_logic%22%3A3%7D&sp_atk=fbff157c-2831-4145-9010-bb46ef1ac739&xptdk=fbff157c-2831-4145-9010-bb46ef1ac739",
   },
   {
@@ -334,7 +346,7 @@ const gifts = [
     name: "Kit 2 Travesseiros Nasa Alto Visco 13cm Hug Comfort Premium Padrão",
     price: 159.99,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_616647-MLB99511133141_112025-F.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/kit-2-travesseiros-nasa-alto-visco-13cm-hug-comfort-premium/up/MLBU1416092829?pdp_filters=item_id:MLB1655178716#reviews",
   },
   {    id: 40,
@@ -342,7 +354,7 @@ const gifts = [
     name: "2 Coberta Manta Soft Casal Microfibra Macia Veludo 2,00x1,80 Variadas",
     price: 77.90,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_890895-MLA98765618603_112025-F.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/2-coberta-manta-soft-casal-microfibra-macia-veludo-200x180-variadas/p/MLB62290097#polycard_client=search-desktop&search_layout=grid&position=53&type=product&tracking_id=22a18f13-127c-40ce-ae16-0edc59d7fc8b&wid=MLB5947238580&sid=search",
   },
   {
@@ -351,57 +363,66 @@ const gifts = [
     name: "Kit Cobre Leito Casal 3 Peças Colcha 400 Fios Dupla Face",
     price: 119.70,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_653365-MLB91738240609_092025-F-kit-cobre-leito-casal-3-pecas-colcha-400-fios-dupla-face.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://produto.mercadolivre.com.br/MLB-5175298228-kit-cobre-leito-casal-3-pecas-colcha-400-fios-dupla-face-_JM?searchVariation=182203294066#reviews",
   },
   //Vida Noivos
   {
     id: 44,
     category: "Noivos",
-    name: "Nos Ajude a Pagar a Lua de Mel!",
-    price: 459,
-    image: "",  
-    pix: "",
+    name: "Ir junto para a lua de mel com os noivos",
+    price: 500000,
+    image: "assets/Junto na lua de mel.jpg",  
+    allowSitePurchase: false
+
   },
   {
     id: 45,
     category: "Noivos",
-    name: "Nos Ajude a Pagar os Boletos (São muitos)",
-    price: 250,
-    image: "",
-    pix: "",
+    name: "Nos ajude a pagar o casamento",
+    price: 500,
+    image: "assets/Noiva.jpg",
+      allowSitePurchase: false
+
   },
   {
     id: 46,
     category: "Noivos",
-    name: "Noivo com o Cabelo Cortado Garantido!",
-    price: 120,
-    image: "",
+    name: "Compra do primeiro mês garantida",
+    price: 800,
+    image: "assets/primeiraCompra.jpg",
     pix: "",
+    allowSitePurchase: false
   },
   {
     id: 47,
     category: "Noivos",
-    name: "Noiva com as Unhas Feitas Garantido!",
-    price: 480,
-    image: "",
+    name: "3 meses de unha feita para a noiva",
+    price: 350,
+    image: "assets/Unha Noiva.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   {
     id: 48,
     category: "Noivos",
-    name: "Nos Ajude a Pagar o Casamento!",
-    price: 0,
-    image: "",
+    name: "Adote um boleto atrasado",
+    price: 300,
+    image: "assets/Boletos.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   {
     id: 49,
     category: "Noivos",
-    name: "Compra do Primeiro Mês Garantida!",
-    price: 889,
-    image: "",
+    name: "1 ano pago da taxa do condomínio",
+    price: 3600,
+    image: "assets/Taxa Condominio.jpg",
     pix: "",
+      allowSitePurchase: false
+
   },
   //Eletro
   {
@@ -410,7 +431,7 @@ const gifts = [
     name: "Panela de Arroz Elétrica Mondial Bianca Rice NPE-05-5X 5 Xícaras 400W",
     price: 129.90,
     image: "assets/Panela.jpg",
-    pix: "",
+allowSitePurchase: true,
     link: "https://www.magazineluiza.com.br/panela-de-arroz-eletrica-mondial-bianca-rice-npe-05-5x-5-xicaras-400w/p/236681900/ep/pael/",
   },
   {
@@ -419,7 +440,7 @@ const gifts = [
     name: "Batedeira Mondial Preta 400W Prática B-44-B - 3 Velocidades",
     price: 85.41,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_882428-MLA100075369553_122025-F.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://www.magazineluiza.com.br/batedeira-mondial-preta-400w-pratica-b-44-b-3-velocidades/p/021289100/ep/btdc/",
   },
   {
@@ -428,7 +449,7 @@ const gifts = [
     name: "MONDIAL Chaleira Elétrica Pratic, Preto/Inox, 1200W, 110V - CE-06",
     price: 110.90,
     image: "assets/Chaleira.jpg",
-    pix: "",
+allowSitePurchase: true,
     link: "https://a.co/d/9fQv5qB",
   },
   { 
@@ -437,7 +458,7 @@ const gifts = [
     name: "MONDIAL Climatizador Flash Air, Branco/Preto, 80W, 110V - CL-03",
     price: 491,
     image: "assets/Climatizador.jpg",
-    pix: "",
+allowSitePurchase: true,
     link: "https://a.co/d/iwJXqLs",
   },
   // Cozinha
@@ -447,7 +468,7 @@ const gifts = [
     name: "Jogo 6 Pratos Vidro Sopa Opaline Fundo Nadir Figueiredo 23,5cm Branco",
     price: 59.61,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_725941-MLA99452762732_112025-F.webp",
-    pix: "",
+allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/jogo-6-pratos-vidro-sopa-opaline-fundo-nadir-figueiredo-235cm-branco/p/MLB38589596#polycard_client=search-desktop&search_layout=grid&position=23&type=product&tracking_id=7999f74c-ed66-4e16-aa20-607875d00db1&wid=MLB4245612433&sid=searchs",
   },
   {
@@ -456,7 +477,7 @@ const gifts = [
     name: "Jogo 6 Xícaras De Chá Com Pires 180ml Transparente",
     price: 69.90,
     image: "assets/Xicara.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/jogo-6-xicaras-de-cha-com-pires-180ml/up/MLBU3265950503?pdp_filters=item_id:MLB4112334197#is_advertising=true&searchVariation=MLBU3265950503&backend_model=search-backend&position=13&search_layout=grid&type=pad&tracking_id=f87aca40-5691-4cc1-bf23-a9d6ab10f5c7&ad_domain=VQCATCORE_LST&ad_position=13&ad_click_id=ZGY2OGEzNTUtYjMwYS00OWQ3LWFlNTQtYzAxNjdiOGU1MzM5",
   },
   {
@@ -465,8 +486,7 @@ const gifts = [
     name: "Faqueiro Tramontina 24 Peças Jogo Talheres Aço Inox Preto",
     price: 69.97,
     image: "assets/talheres.jpg",
-    pix: "",
-
+    allowSitePurchase: true,
     link: "https://produto.mercadolivre.com.br/MLB-5840084912-faqueiro-tramontina-24-pecas-jogo-talheres-aco-inox-preto-_JM#polycard_client=recommendations_pdp-pads-reviews&reco_backend=recos-pads-retrieval-4stars&reco_model=rk_ent_v2_retsys_4stars&reco_client=pdp-pads-reviews&reco_item_pos=1&reco_backend_type=low_level&reco_id=62231bf5-5070-4573-9142-12345920b162&is_advertising=true&ad_domain=PDPDESKTOP_RECOMMENDED&ad_position=2&ad_click_id=NDE0YmEwODktOGYxZi00MDc1LWJhY2EtNmFiYjEzNDNkZWFi",
   },
   {
@@ -475,7 +495,7 @@ const gifts = [
     name: "Jogo Americano Redondo Sousplat Supla Mesa Posta 6 Peças Cor Dourado Dolce Home",
     price: 40.78,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_667751-MLA100083300181_122025-F.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/jogo-americano-redondo-sousplat-supla-mesa-posta-6-pecas-cor-dourado-dolce-home/p/MLB24800628?pdp_filters=item_id:MLB5254131568#is_advertising=true&searchVariation=MLB24800628&backend_model=search-backend&position=3&search_layout=grid&type=pad&tracking_id=e444e065-7f86-47e6-a947-6ca451122840&ad_domain=VQCATCORE_LST&ad_position=3&ad_click_id=ZjI4MzQzOTktZGQzYy00YTI0LWExNGYtODNkMjY5YWFhMmQ1",
   },
   {
@@ -484,7 +504,7 @@ const gifts = [
     name: "Tábua De Corte Aço Titânio Inox Para Cozinha Churrasco Carne",
     price: 59.99,
     image: "https://http2.mlstatic.com/D_NQ_NP_2X_846802-MLB110550445707_042026-F.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://produto.mercadolivre.com.br/MLB-5442782570-tabua-de-corte-aco-titnio-inox-para-cozinha-churrasco-carne-_JM#polycard_client=recommendations_vip-pads&reco_backend=recos-pads-retrieval-4stars&reco_model=rk_ent_v2_retsys_4stars&reco_client=vip-pads&reco_item_pos=3&reco_backend_type=low_level&reco_id=0a498f2c-fc08-4101-9b57-21fc9294afbd&is_advertising=true&ad_domain=VIPCORE_RECOMMENDED&ad_position=4&ad_click_id=ZDkwMTM0ZjktNzQwMC00NmEyLTk1YjAtOGMxYmU2MDc2Zjgz",
   },
     {
@@ -493,7 +513,7 @@ const gifts = [
     name: "Kit 6 Pano De Copa Prato Jacquard 100% Algodão 45x65cm Cozinha Desenhos Na Barra",
     price: 41.99,
     image: "https://down-br.img.susercontent.com/file/br-11134207-81z1k-mgrr9py75n9j3c.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://shopee.com.br/Kit-6-Pano-De-Copa-Prato-Jacquard-100-Algod%C3%A3o-45x65cm-Cozinha-Desenhos-Na-Barra-i.755624727.21899897746?extraParams=%7B%22display_model_id%22%3A169412843656%2C%22model_selection_logic%22%3A3%7D&sp_atk=b7f04d6f-d0c2-4dfb-a6d9-d518a7ea4441&xptdk=b7f04d6f-d0c2-4dfb-a6d9-d518a7ea4441",
   },
   {
@@ -502,7 +522,7 @@ const gifts = [
     name: "Escorredor de Louça Duplo Multifuncional Suporte para Pratos, Talheres e Tábua de Corte",
     price: 77.90,
     image: "assets/escorredor.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://shopee.com.br/Escorredor-de-Lou%C3%A7a-Duplo-Multifuncional-Suporte-para-Pratos-Talheres-e-T%C3%A1bua-de-Corte-i.1473898517.23599043776?extraParams=%7B%22display_model_id%22%3A229430680187%2C%22model_selection_logic%22%3A3%7D&sp_atk=bf072741-21bf-4570-9388-19f01df03fa9&xptdk=bf072741-21bf-4570-9388-19f01df03fa9",
   },
     {
@@ -511,7 +531,7 @@ const gifts = [
     name: "Kit Cozinha 3 Peças Lixeira Pia 5 Litros + Porta Detergente Sabão + Rodinho de Pia",
     price: 27.80,
     image: "https://down-br.img.susercontent.com/file/sg-11134201-7rcdy-lslv0yn923f779.webp",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://shopee.com.br/Kit-Cozinha-3-Pe%C3%A7as-Lixeira-Pia-5-Litros-Porta-Detergente-Sab%C3%A3o-Rodinho-de-Pia-i.754451852.22297382757?extraParams=%7B%22display_model_id%22%3A234115703117%2C%22model_selection_logic%22%3A3%7D&sp_atk=c28e37e5-817f-4675-b60c-2d31fbc3c704&xptdk=c28e37e5-817f-4675-b60c-2d31fbc3c704",
   },
   {
@@ -520,7 +540,52 @@ const gifts = [
     name: "Kit Facas Inox 7 Peças Cozinha Churrasco Premium e Brinde Afiador De Facas",
     price: 41.94,
     image: "assets/Faca.jpg",
-    pix: "",
+    allowSitePurchase: true,
     link: "https://www.mercadolivre.com.br/kit-facas-inox-7-pecas-cozinha-churrasco-premium-brinde-afiador-de-facas/p/MLB47160549?pdp_filters=item_id:MLB5947921640#reviews&gid=1&pid=1",
+  },
+  {
+    id: 73,
+    category: "Noivos",
+    name: "Ajuda no nosso primeiro jantar casados!",
+    price: 140,
+    image: "assets/primeira janta.jpg",
+    pix: "",
+    allowSitePurchase: false
+  },
+  {
+    id: 74,
+    category: "Noivos",
+    name: "Cota pra perguntar quando vem os filhos",
+    price: 1000,
+    image: "assets/filhos.jpg",
+    pix: "",
+    allowSitePurchase: false
+  },
+  {
+    id: 75,
+    category: "Noivos",
+    name: "Só pra dizer que não dei nada",
+    price: 50,
+    image: "assets/presente pequeno.jpg",
+    pix: "",
+    allowSitePurchase: false
+  },
+  {
+    id: 76,
+    category: "Noivos",
+    name: "Rolo de macarrão para a noiva utilizar quando necessário",
+    price: 150,
+    image: "assets/rolo macararraio.jpg",
+    pix: "",
+    allowSitePurchase: false
+  },
+  {
+    id: 77,
+    category: "Noivos",
+    name: "Capacete contra o rolo de macarrão",
+    price: 150,
+    image: "assets/capacete.jpg",
+    pix: "",
+    allowSitePurchase: false
   }
-];
+  ];

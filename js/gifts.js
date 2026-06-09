@@ -92,7 +92,10 @@ const btnSite = document.getElementById("modalBtnSite");
   const gift = gifts.find(g => g.id === id);
   if (!gift) return;
 
-if (comprasViaSite.includes(gift.name)) {
+if (
+  comprasViaSite.includes(gift.name) ||
+  gift.allowSitePurchase === false
+) {
   btnSite.style.display = "none";
 } else {
   btnSite.style.display = "block";
