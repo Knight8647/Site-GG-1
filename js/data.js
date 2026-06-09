@@ -418,7 +418,7 @@ const gifts = [
     category: "Eletro",
     name: "Batedeira Mondial Preta 400W Prática B-44-B - 3 Velocidades",
     price: 85.41,
-    image: "assets/Batedeira.jpg",
+    image: "https://http2.mlstatic.com/D_NQ_NP_2X_882428-MLA100075369553_122025-F.webp",
     pix: "",
     link: "https://www.magazineluiza.com.br/batedeira-mondial-preta-400w-pratica-b-44-b-3-velocidades/p/021289100/ep/btdc/",
   },
