@@ -371,7 +371,7 @@ allowSitePurchase: true,
     id: 44,
     category: "Noivos",
     name: "Ir junto para a lua de mel com os noivos",
-    price: 500000,
+    price: 50000,
     image: 'assets/Junto na lua de mel.jpeg',  
     allowSitePurchase: false
 
