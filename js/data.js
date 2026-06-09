@@ -517,7 +517,7 @@ const gifts = [
   {
     id: 72,
     category: "Utensilhos",
-    name: "Kit Facas Inox 7 Peças Cozinha Churrasco Premium + Brinde Afiador De Facas",
+    name: "Kit Facas Inox 7 Peças Cozinha Churrasco Premium e Brinde Afiador De Facas",
     price: 41.94,
     image: "assets/Faca.jpg",
     pix: "",
