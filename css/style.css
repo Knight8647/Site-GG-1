@@ -389,7 +389,7 @@ body {
   border-radius: 16px;
   max-width: 400px;
   text-align: center;
-}
+  position: relative;}
 
 .modal-actions {
   display: flex;
@@ -1324,4 +1324,18 @@ button[disabled] {
 input.invalido {
   border: 2px solid #dc2626;
   background: #fef2f2;
+}
+.modal-close {
+    position: absolute;
+    top: 5px;
+    left: 160px;
+    border: none;
+    background: transparent;
+    font-size: 24px;
+    cursor: pointer;
+    color: #555;
+}
+
+.modal-close:hover {
+    color: #000;
 }

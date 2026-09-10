@@ -141,6 +141,7 @@ function comprarNoSite(link, nomePresente) {
   // (futuro: marcar como comprado no site)
   window.open(link, "_blank");
 }
+
 function atualizarAreaLogin() {
   const area = document.getElementById("loginArea");
   if (!area) return;
